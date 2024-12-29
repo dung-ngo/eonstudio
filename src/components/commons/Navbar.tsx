@@ -15,9 +15,6 @@ const Navbar = (props: NavbarProps): JSX.Element => {
   const [iconSrc, setIconSrc] = useState<string>(LOGOS.default);
   const [isGray, setIsGray] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
 
   const isMobile: boolean = window.matchMedia("(max-width: 768px)").matches;
 

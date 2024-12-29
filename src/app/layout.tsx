@@ -1,7 +1,6 @@
 "use client";
 
 import React, { createContext, useContext, useRef, useState } from "react";
-import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/commons/Navbar";
@@ -18,11 +17,6 @@ const neueMontreal = localFont({
   variable: "--font-pp-neuemontreal",
   weight: "100 900",
 });
-
-// export const metadata: Metadata = {
-//   title: "Eon Studios",
-//   description: "Eon Studios",
-// };
 
 const PropsContext = createContext<(sectionClass: string) => void>(() => {});
 

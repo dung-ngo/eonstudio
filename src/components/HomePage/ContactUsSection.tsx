@@ -1,6 +1,7 @@
 import React from "react";
 import { CONTENT } from "@/app/utils/constants";
 import Image from "next/image";
+import Link from "next/link";
 
 export const ContactUsSection = () => {
   const handleSubmit = () => {};
@@ -111,26 +112,26 @@ export const ContactUsSection = () => {
                 {CONTENT.contacts.response}
               </div>
               <div className="mb-10">
-                <a href="/" className="text-sm font-semibold">
+                <Link href="/" className="text-sm font-semibold">
                   {CONTENT.contacts.email}
-                </a>
+                </Link>
               </div>
               <ul>
                 <li className="text-lg font-bold mb-10">
                   <div className="mb-3">{CONTENT.contacts.place}</div>
                   <div className="text-sm text-gray-500">
-                    <a href={`tel:${CONTENT.contacts.phone}`}>
+                    <Link href={`tel:${CONTENT.contacts.phone}`}>
                       {CONTENT.contacts.phone}
-                    </a>
+                    </Link>
                   </div>
                 </li>
                 <li className="text-sm font-bold text-gray-500">
-                  <a href="">{CONTENT.contacts.privacy}</a>
+                  <Link href="">{CONTENT.contacts.privacy}</Link>
                 </li>
               </ul>
               <ul className="absolute bottom-0 mb-20">
                 <li className="flex mb-8">
-                  <a href="/" className="mr-8">
+                  <Link href="/" className="mr-8">
                     <div className="relative">
                       <Image
                         src="/sam.png"
@@ -148,20 +149,20 @@ export const ContactUsSection = () => {
                         />
                       </span>
                     </div>
-                  </a>
+                  </Link>
                   <div className="mt-1">
-                    <a href="/">
+                    <Link href="/">
                       <div className="text-lg text-white font-extrabold">
                         {CONTENT.contacts.manager1.name}
                       </div>
                       <div className="text-sm font-bold">
                         {CONTENT.contacts.manager1.title}
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </li>
                 <li className="flex">
-                  <a href="/" className="mr-6">
+                  <Link href="/" className="mr-6">
                     <div className="relative">
                       <Image
                         src="/june.png"
@@ -179,16 +180,16 @@ export const ContactUsSection = () => {
                         />
                       </span>
                     </div>
-                  </a>
+                  </Link>
                   <div className="mt-1">
-                    <a href="/">
+                    <Link href="/">
                       <div className="text-lg font-extrabold">
                         {CONTENT.contacts.manager2.name}
                       </div>
                       <div className="text-sm font-bold">
                         {CONTENT.contacts.manager2.title}
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </li>
               </ul>
