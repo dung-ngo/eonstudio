@@ -25,7 +25,7 @@ export const BlogSection = () => {
             <Link href="/blog" className=" text-black text-md font-bold flex">
               <div>{CONTENT.blog.link}</div>
               <Image
-                src="icons/arrow-right.png"
+                src="/icons/arrow-right.png"
                 width={30}
                 height={10}
                 alt="arrow-right"

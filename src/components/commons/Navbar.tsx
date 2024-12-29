@@ -15,7 +15,9 @@ const Navbar = (props: NavbarProps): JSX.Element => {
   const [iconSrc, setIconSrc] = useState<string>(LOGOS.default);
   const [isGray, setIsGray] = useState<boolean>(false);
 
-  const isMobile: boolean = window.matchMedia("(max-width: 768px)").matches;
+  const isMobile =
+    typeof window !== "undefined" &&
+    window.matchMedia("(max-width: 768px)").matches;
 
   useEffect(() => {
     switch (sectionClassName) {

@@ -51,7 +51,3 @@ export default function RootLayout({
     </PropsProvider>
   );
 }
-
-export const useProps = () => {
-  return useContext(PropsContext);
-};

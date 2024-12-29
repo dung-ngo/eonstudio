@@ -4,7 +4,7 @@ import { FC, useLayoutEffect, useRef } from "react";
 import "@/styles/HomePage.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useProps } from "@/app/layout";
+import { useProps } from "@/context/PropsContext";
 import { BlogSection } from "@/components/HomePage/BlogSection";
 import { ContactsMobileSection } from "@/components/HomePage/ContactsMobileSection";
 import { ContactUsSection } from "@/components/HomePage/ContactUsSection";
