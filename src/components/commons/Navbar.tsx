@@ -14,7 +14,6 @@ const Navbar = (props: NavbarProps): JSX.Element => {
   const { sectionClassName } = props;
   const [iconSrc, setIconSrc] = useState<string>(LOGOS.default);
   const [isGray, setIsGray] = useState<boolean>(false);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const isMobile: boolean = window.matchMedia("(max-width: 768px)").matches;
 
@@ -56,7 +55,7 @@ const Navbar = (props: NavbarProps): JSX.Element => {
         setIsGray(false);
         break;
     }
-  }, [sectionClassName]);
+  }, [sectionClassName, isMobile]);
 
   // useEffect(() => {
   //   hamburgerMenuColor();
@@ -107,8 +106,8 @@ const Navbar = (props: NavbarProps): JSX.Element => {
           </div>
           <div className="">
             <div
-              className={`hamburger ${isOpen ? "open" : ""}`}
-              // onClick={() => setIsOpen(!isOpen)}
+            // className={`hamburger ${isOpen ? "open" : ""}`}
+            // onClick={() => setIsOpen(!isOpen)}
             >
               <span className={isGray ? "home__bg-gray" : "bg-white"}></span>
               <span className={isGray ? "home__bg-gray" : "bg-white"}></span>
