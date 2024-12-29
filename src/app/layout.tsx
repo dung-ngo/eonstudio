@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/commons/Navbar";
 import Scrollbar from "@/components/commons/Scrollbar";
+import { PropsProvider } from "@/context/PropsContext";
 
 const ppRader = localFont({
   src: "./fonts/PPRader.otf",
@@ -33,7 +34,7 @@ export default function RootLayout({
   };
 
   return (
-    <PropsContext.Provider value={handleBgClassName}>
+    <PropsProvider value={handleBgClassName}>
       <html lang="en">
         <head>
           <link rel="icon" href="/logo-white.svg" />
@@ -47,7 +48,7 @@ export default function RootLayout({
           </Scrollbar>
         </body>
       </html>
-    </PropsContext.Provider>
+    </PropsProvider>
   );
 }
 
