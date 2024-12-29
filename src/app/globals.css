@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --home-gray: #2d2a2b;
+  --home-gray-82: #828282;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--home-gray);
+  font-family: var(--font-neue-montreal);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+h1 {
+  font-family: var(--font-pp-rader);
+}
+
+.home__bg-gray {
+  background-color: var(--home-gray);
+}
+
+.home__text-gray {
+  color: var(--home-gray);
+}
+
+.home__border-gray {
+  border-color: var(--home-gray);
+}
+
+.home__text-gray-82 {
+  color: var(--home-gray-82);
+}
+
+.home__font-rader {
+  font-family: var(--font-pp-rader);
+}
+
+.home__font-neue {
+  font-family: var(--font-neue-montreal);
+}
