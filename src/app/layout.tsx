@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useRef, useState } from "react";
+import React, { createContext, useRef, useState } from "react";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/commons/Navbar";
@@ -18,8 +18,6 @@ const neueMontreal = localFont({
   variable: "--font-pp-neuemontreal",
   weight: "100 900",
 });
-
-const PropsContext = createContext<(sectionClass: string) => void>(() => {});
 
 export default function RootLayout({
   children,
