@@ -61,7 +61,7 @@ export const HomePage: FC = () => {
       mainTimeline.revert();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, [handleProps]);
+  }, []);
 
   const getSectionClassname = (text: string) => {
     const classes = text.split(" ");

@@ -108,8 +108,9 @@ const Navbar = (props: NavbarProps): JSX.Element => {
           </div>
           <div className="">
             <div
-            // className={`hamburger ${isOpen ? "open" : ""}`}
-            // onClick={() => setIsOpen(!isOpen)}
+              // className={`hamburger ${isOpen ? "open" : ""}`}
+              // onClick={() => setIsOpen(!isOpen)}
+              className="hamburger"
             >
               <span className={isGray ? "home__bg-gray" : "bg-white"}></span>
               <span className={isGray ? "home__bg-gray" : "bg-white"}></span>
