@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/commons/Navbar";
