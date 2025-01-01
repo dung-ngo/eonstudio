@@ -7,21 +7,21 @@ export const BlogSection = () => {
   return (
     <section className="section__blog h-screen home__bg-gray md:bg-white pt-24 px-5 md:px-6">
       {/* DESKTOP SCREEN */}
-      <div className="hidden md:block text-black">
+      <div className="hidden md:block text-black mb-10">
         <div className="blog-top text-center">
           <h1
             dangerouslySetInnerHTML={{
               __html: CONTENT.blog.title,
             }}
-            className="text-black text-6xl font-bold mb-6"
+            className="text-black text-6xl font-bold"
           ></h1>
           <p
-            className="text-slate-400 text-md font-bold mb-4"
+            className="text-slate-400 text-md font-bold"
             dangerouslySetInnerHTML={{
               __html: CONTENT.blog.desktop.text,
             }}
           ></p>
-          <div className="link flex justify-center">
+          <div className="link flex justify-center pt-5">
             <Link href="/blog" className=" text-black text-md font-bold flex">
               <div>{CONTENT.blog.viewAll}</div>
               <Image
@@ -38,10 +38,10 @@ export const BlogSection = () => {
           <div className="flex flex-col w-1/3 pr-5">
             <Image
               src="/blog-1.jpg"
-              width={200}
+              width={300}
               height={100}
               alt="image1"
-              className="w-full h-2/3"
+              className="w-full h-2/4"
             />
             <h1
               dangerouslySetInnerHTML={{
@@ -59,10 +59,10 @@ export const BlogSection = () => {
           <div className="flex flex-col w-1/3 px-5">
             <Image
               src="/blog-2.jpg"
-              width={200}
+              width={300}
               height={100}
               alt="image2"
-              className="w-full h-2/3"
+              className="w-full h-2/4"
             />
             <h1
               dangerouslySetInnerHTML={{
@@ -83,7 +83,7 @@ export const BlogSection = () => {
               width={300}
               height={100}
               alt="image3"
-              className="w-full h-2/3"
+              className="w-full h-2/4"
             />
             <h1
               dangerouslySetInnerHTML={{

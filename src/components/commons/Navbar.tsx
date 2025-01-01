@@ -72,7 +72,7 @@ const Navbar = (props: NavbarProps): JSX.Element => {
 
   return (
     <nav className="fixed top-0 w-full bg-transparent text-white z-10">
-      <div className="max-w-8xl mx-auto pl-3 pr-4 py-4 md:px-[6.25rem]">
+      <div className="max-w-8xl mx-auto pl-3 pr-4 py-4 md:px-24">
         <div className="flex justify-between items-center h-16">
           <div className="company-logo">
             <Link href="/" className="text-xl font-bold flex">

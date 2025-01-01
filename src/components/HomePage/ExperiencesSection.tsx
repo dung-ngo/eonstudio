@@ -35,7 +35,7 @@ export const ExperiencesSection = (props: ExperiencesSectionProps) => {
         {/* DESKTOP SCREEN */}
         <div className="hidden md:block">
           <div className="flex h-screen">
-            <div className="w-1/2 main-bg-gray flex items-center justify-center">
+            <div className="w-1/2 flex items-center justify-center">
               <Image
                 src={imgSrc}
                 width={500}
@@ -44,7 +44,7 @@ export const ExperiencesSection = (props: ExperiencesSectionProps) => {
                 className="w-full h-full"
               />
             </div>
-            <div className="w-1/2 text-black pl-24 pt-60">
+            <div className="w-1/2 text-black pl-24 pt-48">
               <h1
                 dangerouslySetInnerHTML={{
                   __html: mainContent.desktop.title,
@@ -59,7 +59,7 @@ export const ExperiencesSection = (props: ExperiencesSectionProps) => {
               ></p>
               <ul className="list-none my-8">
                 {items.map((item, index) => (
-                  <li key={index} className="flex items-center mb-4">
+                  <li key={index} className="flex items-center mb-2">
                     <Image
                       src="/icons/cube-icon.png"
                       alt="cube-icon"

@@ -26,7 +26,7 @@ export const AboutSection = (props: AboutSectionProps) => {
         {/* DESKTOP SCREEN */}
         <div className="hidden md:block">
           <div className="flex h-screen">
-            <div className="w-1/2 text-black pl-24 pt-80">
+            <div className="w-1/2 text-black pl-28 pr-20 pt-56">
               <h1
                 dangerouslySetInnerHTML={{
                   __html: mainContent.desktop.title,
@@ -47,11 +47,11 @@ export const AboutSection = (props: AboutSectionProps) => {
                 </div>
               )}
             </div>
-            <div className="w-1/2 home__border-gray flex items-center justify-center">
+            <div className="w-1/2 home__bg-gray flex items-center justify-center">
               <Image
                 src={imgSrc}
-                width={100}
-                height={100}
+                width={300}
+                height={300}
                 alt={imgAlt}
                 className="h-72 w-72"
               />
