@@ -17,7 +17,7 @@ export const IntroSection = (props: IntroSectionProps) => {
   const { content, buttonHref, videoSrc } = props;
   return (
     <section className="relative section__intro first text-white">
-      <div className="main-content absolute bottom-8 md:bottom-16 z-10 left-5 md:left-24">
+      <div className="main-content absolute bottom-14 md:bottom-16 z-10 left-5 md:left-24">
         <h1
           dangerouslySetInnerHTML={{
             __html: content.desktop.title,
