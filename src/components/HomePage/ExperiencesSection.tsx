@@ -97,17 +97,17 @@ export const ExperiencesSection = (props: ExperiencesSectionProps) => {
                 dangerouslySetInnerHTML={{
                   __html: mainContent.desktop.title,
                 }}
-                className="home__text-gray text-2xl font-bold mb-5"
+                className="home__text-gray text-2xl font-bold"
               ></h1>
               <p
                 dangerouslySetInnerHTML={{
                   __html: mainContent.desktop.text,
                 }}
-                className="home__text-gray-82 font-semibold my-4"
+                className="home__text-gray-82 font-semibold my-3"
               ></p>
-              <ul className="list-none my-5">
+              <ul className="list-none">
                 {items.map((item, index) => (
-                  <li key={index} className="flex items-center mb-1 text-xs">
+                  <li key={index} className="flex items-center mb-1 text-sm">
                     <Image
                       src="/icons/cube-icon.png"
                       alt="cube-icon"
