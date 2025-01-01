@@ -44,7 +44,7 @@ export const ExperiencesSection = (props: ExperiencesSectionProps) => {
                 className="w-full h-full"
               />
             </div>
-            <div className="w-1/2 text-black pl-[100px] pt-[236px]">
+            <div className="w-1/2 text-black pl-24 pt-60">
               <h1
                 dangerouslySetInnerHTML={{
                   __html: mainContent.desktop.title,
@@ -71,7 +71,7 @@ export const ExperiencesSection = (props: ExperiencesSectionProps) => {
                   </li>
                 ))}
               </ul>
-              <div className="button border-[1px] border-[#2D2A2B] rounded-sm cursor-pointer z-10 flex items-center justify-center md:w-[233px] md:h-[54px]">
+              <div className="button border-[1px] home__border-gray rounded-sm cursor-pointer z-10 flex items-center justify-center md:w-60 md:h-14">
                 <Link href={buttonHref} className="text-xl">
                   {mainContent.button}
                 </Link>
@@ -86,13 +86,13 @@ export const ExperiencesSection = (props: ExperiencesSectionProps) => {
             <div>
               <Image
                 src={imgSrc}
-                width={100}
-                height={100}
+                width={500}
+                height={500}
                 className="h-[17rem] w-full object-cover object-center"
                 alt="experiences"
               />
             </div>
-            <div className="mx-5 my-16">
+            <div className="mx-5 my-10">
               <h1
                 dangerouslySetInnerHTML={{
                   __html: mainContent.desktop.title,
@@ -105,9 +105,9 @@ export const ExperiencesSection = (props: ExperiencesSectionProps) => {
                 }}
                 className="home__text-gray-82 font-semibold my-4"
               ></p>
-              <ul className="list-none my-8">
+              <ul className="list-none my-5">
                 {items.map((item, index) => (
-                  <li key={index} className="flex items-center mb-2">
+                  <li key={index} className="flex items-center mb-1 text-xs">
                     <Image
                       src="/icons/cube-icon.png"
                       alt="cube-icon"

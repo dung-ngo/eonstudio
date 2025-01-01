@@ -67,7 +67,7 @@ export const CONTENT = {
   blog: {
     title: "From our blog",
     text: `Explore our latest articles and updates in digital branding.`,
-    link: "View all",
+    viewAll: "View all",
     newsTitle1: "Transforming Brands Through Design",
     newsBrief1:
       "Discover how we elevated a brand's identity through innovative design.",

@@ -26,7 +26,7 @@ export const AboutSection = (props: AboutSectionProps) => {
         {/* DESKTOP SCREEN */}
         <div className="hidden md:block">
           <div className="flex h-screen">
-            <div className="w-1/2 text-black pl-[100px] pt-[19.625rem]">
+            <div className="w-1/2 text-black pl-24 pt-80">
               <h1
                 dangerouslySetInnerHTML={{
                   __html: mainContent.desktop.title,
@@ -40,20 +40,20 @@ export const AboutSection = (props: AboutSectionProps) => {
                 className="mb-8 text-lg home__text-gray-82 font-semibold"
               ></p>
               {buttonHref && (
-                <div className="button border border-[#2D2A2B] rounded-sm cursor-pointer z-10 flex items-center justify-center md:w-[233px] md:h-[54px]">
+                <div className="button border home__border-gray rounded-sm cursor-pointer z-10 flex items-center justify-center md:w-60 md:h-14">
                   <Link href="/about" className="text-xl">
                     {mainContent.button}
                   </Link>
                 </div>
               )}
             </div>
-            <div className="w-1/2 bg-[#2D2A2B] flex items-center justify-center">
+            <div className="w-1/2 home__border-gray flex items-center justify-center">
               <Image
                 src={imgSrc}
                 width={100}
                 height={100}
                 alt={imgAlt}
-                className="h-[18.75rem] w-[18.75rem]"
+                className="h-72 w-72"
               />
             </div>
           </div>
@@ -61,13 +61,13 @@ export const AboutSection = (props: AboutSectionProps) => {
 
         {/* MOBILE SCREEN */}
         <div className="block md:hidden h-screen home__bg-gray">
-          <div className="container absolute mt-52 mb-52">
-            <div className="company-logo flex justify-center mb-[0.625rem]">
+          <div className="container absolute mt-48 mb-52">
+            <div className="company-logo flex justify-center mb-2">
               <Image
                 src={imgSrc}
                 width={100}
                 height={100}
-                className="w-[6.25rem] h-[6.25rem] object-cover object-center"
+                className="w-24 h-24 object-cover object-center"
                 alt={imgAlt}
               />
             </div>
@@ -77,19 +77,19 @@ export const AboutSection = (props: AboutSectionProps) => {
                   dangerouslySetInnerHTML={{
                     __html: mainContent.title,
                   }}
-                  className="text-2xl font-bold mb-2"
+                  className="text-2xl font-bold"
                 ></h1>
               </div>
-              <div className="my-8">
+              <div className="mt-5 mb-8">
                 <p
                   dangerouslySetInnerHTML={{
                     __html: mainContent.text,
                   }}
-                  className="mb-8 text-md"
+                  className="text-md"
                 ></p>
               </div>
               <div className="flex justify-center">
-                <div className="button w-[14.6rem] h-[3.75rem] flex justify-center items-center mb-14 border border-white rounded-sm z-10">
+                <div className="button w-56 h-14 flex justify-center items-center border border-white rounded-sm z-10">
                   <Link href={buttonHref} className="text-lg">
                     {mainContent.button}
                   </Link>

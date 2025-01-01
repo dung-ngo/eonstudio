@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const BlogSection = () => {
   return (
-    <section className="section__blog h-screen home__bg-gray md:bg-white pt-[5.6rem] px-5 md:px-6">
+    <section className="section__blog h-screen home__bg-gray md:bg-white pt-24 px-5 md:px-6">
       {/* DESKTOP SCREEN */}
       <div className="hidden md:block text-black">
         <div className="blog-top text-center">
@@ -23,7 +23,7 @@ export const BlogSection = () => {
           ></p>
           <div className="link flex justify-center">
             <Link href="/blog" className=" text-black text-md font-bold flex">
-              <div>{CONTENT.blog.link}</div>
+              <div>{CONTENT.blog.viewAll}</div>
               <Image
                 src="/icons/arrow-right.png"
                 width={30}
@@ -110,14 +110,14 @@ export const BlogSection = () => {
           className="text-2xl font-bold"
         ></h1>
         <p
-          className="text-slate-400 text-md font-bold my-6"
+          className="text-slate-400 text-md font-bold mt-2"
           dangerouslySetInnerHTML={{
             __html: CONTENT.blog.text,
           }}
         ></p>
-        <div className="h-[3.75rem] flex justify-center items-center">
+        <div className="h-14 flex justify-center items-center">
           <Link href="/blog" className="text-md font-bold flex">
-            <div>{CONTENT.blog.link}</div>
+            <div>{CONTENT.blog.viewAll}</div>
             <Image
               src="/icons/arrow-right-white.png"
               width={30}
