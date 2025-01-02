@@ -75,7 +75,7 @@ export const HomePage: FC = () => {
           <IntroSection
             content={CONTENT.intro}
             buttonHref="/intro"
-            videoSrc="intro-video.mp4"
+            // videoSrc="intro-video.mp4"
           />
           <AboutSection
             mainContent={CONTENT.about}

@@ -11,7 +11,7 @@ interface IntroSectionProps {
     };
   };
   buttonHref: string;
-  videoSrc: string;
+  videoSrc?: string;
 }
 
 export const IntroSection = (props: IntroSectionProps) => {
