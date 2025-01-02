@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useLayoutEffect, useRef, useState, useEffect } from "react";
+import { FC, useLayoutEffect, useRef, useState } from "react";
 import "@/styles/HomePage.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -13,6 +13,7 @@ import { IntroSection } from "@/components/HomePage/IntroSection";
 import { ExperiencesSection } from "./ExperiencesSection";
 import { AboutSection } from "./AboutSection";
 import { CaseStudySection } from "@/components/HomePage/CaseStudySection";
+import useSmoothScroll from "@/hooks/useSmoothScroll";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,43 +48,43 @@ export const HomePage: FC = () => {
     });
   }, []);
 
-  useEffect(() => {
-    const smoothScroll = () => {
-      const sections = document.querySelectorAll('section');
-      let currentSection = 0;
-      const scrollToSection = (index:number) => {
-        sections[index].scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-          inline: 'nearest',
-        });
-      };
-      const handleScroll = (e: any) => {
-        if (e.deltaY > 0) {
-          if (currentSection < sections.length - 1) {
-            currentSection++;
-          }
-        } else {
-          if (currentSection > 0) {
-            currentSection--;
-          }
-        }
-        currentSection = Math.max(0, Math.min(currentSection, sections.length - 1));
-        scrollToSection(currentSection);
-      };
-      document.addEventListener('wheel', handleScroll);
-      return () => {
-        document.removeEventListener('wheel', handleScroll);
-      };
-    };
-    smoothScroll();
-  }, []);
-
+  // useEffect(() => {
+  //   const smoothScroll = () => {
+  //     const sections = document.querySelectorAll('section');
+  //     let currentSection = 0;
+  //     const scrollToSection = (index:number) => {
+  //       sections[index].scrollIntoView({
+  //         behavior: 'smooth',
+  //         block: 'start',
+  //         inline: 'nearest',
+  //       });
+  //     };
+  //     const handleScroll = (e: any) => {
+  //       if (e.deltaY > 0) {
+  //         if (currentSection < sections.length - 1) {
+  //           currentSection++;
+  //         }
+  //       } else {
+  //         if (currentSection > 0) {
+  //           currentSection--;
+  //         }
+  //       }
+  //       currentSection = Math.max(0, Math.min(currentSection, sections.length - 1));
+  //       scrollToSection(currentSection);
+  //     };
+  //     document.addEventListener('wheel', handleScroll);
+  //     return () => {
+  //       document.removeEventListener('wheel', handleScroll);
+  //     };
+  //   };
+  //   smoothScroll();
+  // }, []);
 
   const getSectionClassname = (text: string) => {
     const classes = text.split(" ");
     return classes.find((className) => className.startsWith("section__")) || "";
   };
+  useSmoothScroll();
 
   return (
     <div className="home-container md:px-24">

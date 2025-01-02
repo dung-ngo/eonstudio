@@ -44,7 +44,7 @@ export const ExperiencesSection = (props: ExperiencesSectionProps) => {
                 className="w-full h-full"
               />
             </div>
-            <div className="w-1/2 text-black pl-24 pt-48">
+            <div className="w-1/2 text-black pl-24 pr-24 pt-40">
               <h1
                 dangerouslySetInnerHTML={{
                   __html: mainContent.desktop.title,

@@ -34,7 +34,7 @@ export const CONTENT = {
     button: "View Services",
     desktop: {
       title: `Crafting Exceptional Digital<br/>Experiences for You`,
-      text: `Our creative team specializes in transforming ideas into stunning visuals and<br/>functional websites. From captivating photoshoots to innovative web<br/>development or apps, we bring your vision to life.`,
+      text: `Our creative team specializes in transforming ideas into stunning visuals and functional websites. From captivating photoshoots to innovative web development or apps, we bring your vision to life.`,
       item1: "Innovative concepts tailored to your brand's unique identity.",
       item2: "Dynamic imagery that engages and inspires your audience.",
       item3: "Stunning visuals that captivate and engage your audience.",
