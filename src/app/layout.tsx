@@ -37,6 +37,7 @@ export default function RootLayout({
         <head>
           <title>Eon Studio</title>
           <meta name="description" content="Eon Studio is a creative agency that specializes in branding, photography, design, and web development." />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
           <link rel="icon" href="/logo-white.svg" />
         </head>
         <body
