@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useLayoutEffect, useRef } from "react";
+import { FC, useLayoutEffect, useRef, useState } from "react";
 import "@/styles/HomePage.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -20,6 +20,7 @@ export const HomePage: FC = () => {
   const handleProps = useProps();
   const mainRef = useRef<HTMLDivElement>(null);
   const verticalScrollRef = useRef<HTMLDivElement>(null);
+  const [isIntroSection, setIsIntroSection] = useState<boolean>(true);
 
   useLayoutEffect(() => {
     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -43,6 +44,7 @@ export const HomePage: FC = () => {
     });
     const handleSectionBackground = (section: Element) => {
       const sectionClass = getSectionClassname(section.className);
+      setIsIntroSection(sectionClass === "section__intro");
       handleProps(sectionClass);
     };
     const sections = document.querySelectorAll("section");
@@ -57,6 +59,7 @@ export const HomePage: FC = () => {
         onEnterBack: () => handleSectionBackground(section),
       });
     });
+
     return () => {
       mainTimeline.revert();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -75,6 +78,7 @@ export const HomePage: FC = () => {
           <IntroSection
             content={CONTENT.intro}
             buttonHref="/intro"
+            isIntroSection={isIntroSection}
             // videoSrc="intro-video.mp4"
           />
           <AboutSection

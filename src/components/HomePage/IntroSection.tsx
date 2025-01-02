@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -12,11 +12,20 @@ interface IntroSectionProps {
   };
   buttonHref: string;
   videoSrc?: string;
+  isIntroSection: boolean;
 }
 
 export const IntroSection = (props: IntroSectionProps) => {
-  const { content, buttonHref } = props;
+  const { content, buttonHref, isIntroSection } = props;
   const [isMuted, setIsMuted] = React.useState<boolean>(true);
+
+  useEffect(() => {
+    if(isIntroSection && !isMuted) {
+      setIsMuted(false);
+    } else {
+      setIsMuted(true);
+    }
+  }, [isIntroSection]);
 
   return (
     <section className="relative section__intro first text-white">
@@ -66,3 +75,4 @@ export const IntroSection = (props: IntroSectionProps) => {
     </section>
   );
 };
+

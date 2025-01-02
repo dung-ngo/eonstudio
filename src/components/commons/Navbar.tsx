@@ -20,43 +20,32 @@ const Navbar = (props: NavbarProps): JSX.Element => {
     window.matchMedia("(max-width: 768px)").matches;
 
   useEffect(() => {
-    switch (sectionClassName) {
-      case "section__about-us":
-        if (isMobile) {
-          setIconSrc(LOGOS.default);
-        } else {
-          setIconSrc(LOGOS.black);
-          setIsGray(false);
-        }
-        break;
-      case "section__experiences":
-      case "section__case-study":
-        setIconSrc(LOGOS.black);
-        setIsGray(true);
-        break;
-      case "section__blog":
-        if (isMobile) {
-          setIconSrc(LOGOS.default);
-          setIsGray(false);
-        } else {
+    const updateIconAndColor = () => {
+      switch (sectionClassName) {
+        case "section__about-us":
+          setIconSrc(isMobile ? LOGOS.default : LOGOS.black);
+          setIsGray(!isMobile);
+          break;
+        case "section__experiences":
+        case "section__case-study":
           setIconSrc(LOGOS.black);
           setIsGray(true);
-        }
-        break;
-      case "section__form-contact":
-        if (isMobile) {
+          break;
+        case "section__blog":
           setIconSrc(LOGOS.black);
-          setIsGray(true);
-        } else {
+          setIsGray(!isMobile);
+          break;
+        case "section__form-contact":
           setIconSrc(LOGOS.black);
+          setIsGray(isMobile);
+          break;
+        default:
+          setIconSrc(LOGOS.default);
           setIsGray(false);
-        }
-        break;
-      default:
-        setIconSrc(LOGOS.default);
-        setIsGray(false);
-        break;
-    }
+          break;
+      }
+    };
+    updateIconAndColor();
   }, [sectionClassName, isMobile]);
 
   // useEffect(() => {
