@@ -15,7 +15,7 @@ interface IntroSectionProps {
 }
 
 export const IntroSection = (props: IntroSectionProps) => {
-  const { content, buttonHref, videoSrc } = props;
+  const { content, buttonHref } = props;
   const [isMuted, setIsMuted] = React.useState<boolean>(true);
 
   return (
