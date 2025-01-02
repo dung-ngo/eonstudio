@@ -138,7 +138,7 @@ export const ContactUsSection = () => {
                         width={100}
                         height={100}
                         alt="manager-1"
-                        className="rounded-full w-[3.75rem]"
+                        className="rounded-full w-14"
                       />
                       <span className="absolute bottom-0 right-0">
                         <Image
@@ -166,10 +166,10 @@ export const ContactUsSection = () => {
                     <div className="relative">
                       <Image
                         src="/june.png"
-                        width={50}
-                        height={50}
+                        width={100}
+                        height={100}
                         alt="manager-2"
-                        className="rounded-full"
+                        className="rounded-full w-14"
                       />
                       <span className="absolute bottom-0 right-0">
                         <Image
