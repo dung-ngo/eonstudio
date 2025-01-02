@@ -6,7 +6,6 @@ import "./globals.css";
 import Navbar from "@/components/commons/Navbar";
 import Scrollbar from "@/components/commons/Scrollbar";
 import { PropsProvider } from "@/context/PropsContext";
-import type { Metadata } from 'next';
 
 const ppRader = localFont({
   src: "./fonts/PPRader.otf",
@@ -19,11 +18,6 @@ const neueMontreal = localFont({
   variable: "--font-pp-neuemontreal",
   weight: "100 900",
 });
-
-export const metadata: Metadata = {
-  title: 'Eon Studio',
-  description: 'Eon Studio is a creative agency that specializes in branding, photography, design, and web development.',
-}
 
 export default function RootLayout({
   children,
@@ -41,6 +35,8 @@ export default function RootLayout({
     <PropsProvider value={handleBgClassName}>
       <html lang="en">
         <head>
+          <title>Eon Studio</title>
+          <meta name="description" content="Eon Studio is a creative agency that specializes in branding, photography, design, and web development." />
           <link rel="icon" href="/logo-white.svg" />
         </head>
         <body
