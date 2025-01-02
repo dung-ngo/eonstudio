@@ -17,6 +17,7 @@
 body {
   color: var(--home-gray);
   font-family: var(--font-neue-montreal);
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {

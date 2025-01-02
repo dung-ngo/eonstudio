@@ -22,7 +22,7 @@ export const AboutSection = (props: AboutSectionProps) => {
 
   return (
     <>
-      <section className="section__about-us text-white relative">
+      <section className="section__about-us text-white relative h-screen">
         {/* DESKTOP SCREEN */}
         <div className="hidden md:block">
           <div className="flex h-screen">

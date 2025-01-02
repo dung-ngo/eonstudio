@@ -29,9 +29,9 @@ export const ExperiencesSection = (props: ExperiencesSectionProps) => {
   const items = Object.keys(mainContent.desktop)
     .filter((item) => item.startsWith("item"))
     .map((item) => mainContent.desktop[item]);
+
   return (
-    <>
-      <section className="section__experiences md:bg-white relative">
+      <section className="section__experiences md:bg-white relative h-screen">
         {/* DESKTOP SCREEN */}
         <div className="hidden md:block">
           <div className="flex h-screen">
@@ -123,6 +123,5 @@ export const ExperiencesSection = (props: ExperiencesSectionProps) => {
           </div>
         </div>
       </section>
-    </>
   );
 };

@@ -24,7 +24,8 @@ const Navbar = (props: NavbarProps): JSX.Element => {
       switch (sectionClassName) {
         case "section__about-us":
           setIconSrc(isMobile ? LOGOS.default : LOGOS.black);
-          setIsGray(!isMobile);
+          console.log("isMobile", isMobile);
+          setIsGray(false);
           break;
         case "section__experiences":
         case "section__case-study":

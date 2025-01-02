@@ -28,7 +28,7 @@ export const IntroSection = (props: IntroSectionProps) => {
   }, [isIntroSection]);
 
   return (
-    <section className="relative section__intro first text-white">
+    <section className="relative section__intro first text-white h-screen">
         <div className="main-content absolute bottom-20 md:bottom-16 z-10 px-5 md:px-28 w-full">
           <h1
             dangerouslySetInnerHTML={{

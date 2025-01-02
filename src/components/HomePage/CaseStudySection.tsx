@@ -12,7 +12,6 @@ interface CaseStudySectionProps {
       text: string;
     };
   };
-  sectionClass: string;
   buttonHref: string;
   imgSrc: string;
   imgAlt: string;
@@ -20,12 +19,12 @@ interface CaseStudySectionProps {
 }
 
 export const CaseStudySection = (props: CaseStudySectionProps) => {
-  const { mainContent, sectionClass, buttonHref, imgSrc, imgAlt, imgClass } =
+  const { mainContent, buttonHref, imgSrc, imgAlt, imgClass } =
     props;
 
   return (
     <>
-      <section className={`${sectionClass} md:bg-white relative`}>
+      <section className="section__case-study md:bg-white relative h-screen">
         {/* DESKTOP SCREEN */}
         <div className="hidden md:block">
           <div className="flex h-screen">
