@@ -65,6 +65,7 @@ export const IntroSection = (props: IntroSectionProps) => {
         <video
           className="h-screen w-screen object-cover object-center"
           muted={isMuted}
+          playsInline
           autoPlay
           loop
         >
