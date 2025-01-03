@@ -24,9 +24,9 @@ export const AboutSection = (props: AboutSectionProps) => {
     <>
       <section className="section__about-us text-white relative h-screen">
         {/* DESKTOP SCREEN */}
-        <div className="hidden md:block">
+        <div className="hidden xl:block">
           <div className="flex h-screen">
-            <div className="w-1/2 text-black pl-28 pr-20 pt-56">
+            <div className="w-1/2 text-black pl-24 pr-24 pt-80">
               <h1
                 dangerouslySetInnerHTML={{
                   __html: mainContent.desktop.title,
@@ -59,38 +59,38 @@ export const AboutSection = (props: AboutSectionProps) => {
           </div>
         </div>
 
-        {/* MOBILE SCREEN */}
-        <div className="block md:hidden h-screen home__bg-gray">
-          <div className="container absolute mt-48 mb-52">
-            <div className="company-logo flex justify-center mb-2">
+        {/* MOBILE + Ipad Mini(md) + Ipad Pro(lg) SCREEN */}
+        <div className="block xl:hidden h-screen home__bg-gray">
+          <div className="container absolute mt-32 md:mt-52 lg:mt-56">
+            <div className="company-logo flex justify-center">
               <Image
                 src={imgSrc}
-                width={100}
-                height={100}
-                className="w-24 h-24 object-cover object-center"
+                width={500}
+                height={500}
+                className="w-24 h-24 md:w-60 md:h-60 lg:w-80 lg:h-80"
                 alt={imgAlt}
               />
             </div>
             <div className="main-content mx-10 text-center">
-              <div className="mt-14 px-5">
+              <div className="mt-14 px-5 md:my-10">
                 <h1
                   dangerouslySetInnerHTML={{
                     __html: mainContent.title,
                   }}
-                  className="text-2xl font-bold"
+                  className="text-2xl font-bold md:text-4xl lg:text-5xl"
                 ></h1>
               </div>
-              <div className="mt-5 mb-8">
+              <div className="mt-5 mb-8 md:mb-20">
                 <p
                   dangerouslySetInnerHTML={{
                     __html: mainContent.text,
                   }}
-                  className="text-md"
+                  className="text-md md:text-xl lg:text-3xl"
                 ></p>
               </div>
               <div className="flex justify-center">
-                <div className="button w-56 h-14 flex justify-center items-center border border-white rounded-sm z-10">
-                  <Link href={buttonHref} className="text-lg">
+                <div className="button w-56 h-14 flex justify-center items-center border border-white rounded-sm z-10 md:w-72 md:h-16 lg:w-96 lg:h-24">
+                  <Link href={buttonHref} className="text-lg md:text-2xl lg:text-3xl">
                     {mainContent.button}
                   </Link>
                 </div>

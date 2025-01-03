@@ -44,11 +44,11 @@ export const CONTENT = {
   },
   casestudy: {
     title: "Our Work Speaks Volumes",
-    text: `Discover our array of successful projects and cutting-edge innovative<br/>solutions that have made a significant impact. We invite you to delve into the<br/>details of each initiative, showcasing our commitment to excellence and<br/>creativity in overcoming challenges.`,
+    text: `Discover our array of successful projects and cutting-edge innovative solutions that have made a significant impact. We invite you to delve into the details of each initiative, showcasing our commitment to excellence and creativity in overcoming challenges.`,
     button: "View Case Studies",
     desktop: {
       title: "Our Work Speaks Volumes",
-      text: `Discover our array of successful projects and cutting-edge innovative<br/>solutions that have made a significant impact. We invite you to delve into the<br/>details of each initiative, showcasing our commitment to excellence and<br/>creativity in overcoming challenges.`,
+      text: `Discover our array of successful projects and cutting-edge innovative solutions that have made a significant impact. We invite you to delve into the details of each initiative, showcasing our commitment to excellence and creativity in overcoming challenges.`,
     },
   },
   wheelsup: {

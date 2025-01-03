@@ -91,7 +91,7 @@ export const HomePage: FC = () => {
         <div className="vertical-scroll" ref={verticalScrollRef}>
           <IntroSection
             content={CONTENT.intro}
-            buttonHref="/intro"
+            buttonHref="#contact-us"
             isIntroSection={isIntroSection}
             // videoSrc="intro-video.mp4"
           />

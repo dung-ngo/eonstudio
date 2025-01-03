@@ -1,4 +1,5 @@
 import React from "react";
+import "@/styles/CaseStudySection.css";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -26,9 +27,9 @@ export const CaseStudySection = (props: CaseStudySectionProps) => {
     <>
       <section className="section__case-study md:bg-white relative h-screen">
         {/* DESKTOP SCREEN */}
-        <div className="hidden md:block">
+        <div className="hidden xl:block">
           <div className="flex h-screen">
-            <div className={`w-1/2 text-black pl-24 pt-60`}>
+            <div className="w-1/2 text-black px-24 pt-60">
               <h1
                 dangerouslySetInnerHTML={{
                   __html: mainContent.desktop.title,
@@ -60,32 +61,33 @@ export const CaseStudySection = (props: CaseStudySectionProps) => {
         </div>
 
         {/* MOBILE SCREEN */}
-        <div className="block md:hidden">
+        <div className="block xl:hidden">
           <div className="h-screen">
-            <div>
+            <div className="first-content">
               <Image
                 src={imgSrc}
                 width={500}
                 height={500}
-                className="h-[17rem] w-full object-cover object-center"
+                // className="h-full w-full object-cover object-center"
+                className="w-full"
                 alt="case-study"
               />
             </div>
-            <div className="mx-5 my-20">
+            <div className="second-content mx-5 mt-10 md:pt-16 md:pb-5 md:px-5 lg:pt-16">
               <h1
                 dangerouslySetInnerHTML={{
                   __html: mainContent.desktop.title,
                 }}
-                className="font-pp-rader text-4xl font-semibold"
+                className="font-pp-rader text-2xl font-bold md:text-6xl lg:text-7xl"
               ></h1>
               <p
                 dangerouslySetInnerHTML={{
                   __html: mainContent.desktop.text,
                 }}
-                className="mt-5 mb-10 home__text-gray-82"
+                className="mt-2 mb-8 home__text-gray-82 md:text-2xl md:mb-10 lg:text-3xl lg:mb-20 lg:leading-10"
               ></p>
-              <div className="button border home__border-gray rounded-sm cursor-pointer z-10 flex items-center justify-center w-[14.6rem] h-[3.375rem]">
-                <Link href={buttonHref} className="text-xl">
+              <div className="button border home__border-gray rounded-sm cursor-pointer z-10 flex items-center justify-center w-60 h-14 md:w-72 md:h-16 lg:w-96 lg:h-24">
+                <Link href={buttonHref} className="text-lg md:text-2xl lg:text-3xl">
                   {mainContent.button}
                 </Link>
               </div>

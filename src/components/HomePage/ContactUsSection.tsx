@@ -6,7 +6,7 @@ import Link from "next/link";
 export const ContactUsSection = () => {
   const handleSubmit = () => {};
   return (
-    <section className="section__form-contact h-screen bg-white px-6 pt-44 md:pt-0 md:px-0 text-black">
+    <section id="#contact-us" className="section__form-contact h-screen bg-white px-6 pt-44 md:pt-0 md:px-0 text-black">
       {/* DESKTOP SCREEN */}
       <div className="hidden md:block">
         <div className="flex">

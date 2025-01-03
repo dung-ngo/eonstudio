@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const ContactsMobileSection = () => {
   return (
-    <section className="block md:hidden section__contacts home__bg-gray text-white">
+    <section id="#contact-us" className="block md:hidden section__contacts home__bg-gray text-white">
       <div className="h-screen px-6 pt-32">
         <div className="mb-2 text-lg font-bold">
           {CONTENT.contacts.response}

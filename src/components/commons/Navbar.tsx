@@ -61,8 +61,8 @@ const Navbar = (props: NavbarProps): JSX.Element => {
 
   return (
     <nav className="fixed top-0 w-full bg-transparent text-white z-10">
-      <div className="max-w-8xl mx-auto pl-3 pr-4 py-4 md:px-24">
-        <div className="flex justify-between items-center h-16">
+      <div className="max-w-8xl mx-auto pl-3 pr-4 py-4 md:pl-9 md:pr-10 lg:pl-10 lg:pr-16 xl:pl-20 xl:pr-24">
+        <div className="flex justify-between items-center h-14 md:h-20 lg:h-32">
           <div className="company-logo">
             <Link href="/" className="text-xl font-bold flex">
               <Image
@@ -70,7 +70,7 @@ const Navbar = (props: NavbarProps): JSX.Element => {
                 width={100}
                 height={100}
                 alt="company-logo"
-                className="w-[3.75rem] h-[3.75rem] mr-3"
+                className="w-14 h-14 mr-3 lg:w-24 lg:h-24"
               />
               {sectionClassName === "section--intro" && (
                 <div className="font-pp-rader text-xl font-semibold py-3 flex items-center">

@@ -34,9 +34,9 @@ export const ExperiencesSection = (props: ExperiencesSectionProps) => {
   return (
       <section className="section__experiences md:bg-white relative h-screen">
         {/* DESKTOP SCREEN */}
-        <div className="hidden md:block">
+        <div className="hidden xl:block">
           <div className="flex h-screen">
-            <div className="left-content w-1/2 flex items-center justify-center">
+            <div className="w-1/2 flex items-center justify-center">
               <Image
                 src={imgSrc}
                 width={500}
@@ -45,7 +45,7 @@ export const ExperiencesSection = (props: ExperiencesSectionProps) => {
                 className="w-full h-full"
               />
             </div>
-            <div className="right-content w-1/2 text-black pl-24 pr-24 pt-60">
+            <div className="w-1/2 text-black px-24 pt-60">
               <h1
                 dangerouslySetInnerHTML={{
                   __html: mainContent.desktop.title,
@@ -68,7 +68,7 @@ export const ExperiencesSection = (props: ExperiencesSectionProps) => {
                       height={100}
                       className="w-5 h-5 mr-3"
                     />
-                    <span className="py-2 text-black">{item}</span>
+                    <span className="py-1 text-black text-lg">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -82,33 +82,33 @@ export const ExperiencesSection = (props: ExperiencesSectionProps) => {
         </div>
 
         {/* MOBILE SCREEN */}
-        <div className="block md:hidden">
+        <div className="block xl:hidden">
           <div className="h-screen">
-            <div className="left-content">
+            <div className="first-content">
               <Image
                 src={imgSrc}
                 width={500}
                 height={500}
-                className="h-64 w-full object-cover object-center"
+                className="w-full object-center"
                 alt="experiences"
               />
             </div>
-            <div className="right-content mx-5 my-10">
+            <div className="second-content mx-5 mt-10 md:py-5 md:px-5 lg:pt-16">
               <h1
                 dangerouslySetInnerHTML={{
                   __html: mainContent.desktop.title,
                 }}
-                className="home__text-gray text-2xl font-bold"
+                className="home__text-gray text-2xl font-bold md:text-5xl lg:text-7xl"
               ></h1>
               <p
                 dangerouslySetInnerHTML={{
                   __html: mainContent.desktop.text,
                 }}
-                className="home__text-gray-82 font-semibold my-3"
+                className="home__text-gray-82 text-xs font-semibold mt-2 mb-3 md:text-xl md:mb-5 lg:text-3xl lg:mb-8"
               ></p>
               <ul className="list-none">
                 {items.map((item, index) => (
-                  <li key={index} className="flex items-center text-sm">
+                  <li key={index} className="flex items-center">
                     <Image
                       src="/icons/cube-icon.png"
                       alt="cube-icon"
@@ -116,7 +116,7 @@ export const ExperiencesSection = (props: ExperiencesSectionProps) => {
                       height={500}
                       className="w-5 h-5 mr-3"
                     />
-                    <span className="py-2 text-black">{item}</span>
+                    <span className="py-1 text-black text-xs md:text-xl lg:text-2xl">{item}</span>
                   </li>
                 ))}
               </ul>

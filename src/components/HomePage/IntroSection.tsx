@@ -29,7 +29,7 @@ export const IntroSection = (props: IntroSectionProps) => {
 
   return (
     <section className="relative section__intro first text-white h-screen">
-        <div className="main-content absolute bottom-20 md:bottom-16 z-10 px-5 md:px-28 w-full">
+        <div className="main-content absolute bottom-20 md:bottom-16 z-10 px-5 w-full md:pl-12 md:pr-12 lg:pl-14 lg:pr-16 xl:pl-24 xl:pr-24">
           <h1
             dangerouslySetInnerHTML={{
               __html: content.desktop.title,
@@ -43,8 +43,8 @@ export const IntroSection = (props: IntroSectionProps) => {
             className="hidden md:block mb-8 text-lg font-semibold"
           ></p>
           <div className="flex justify-between w-full">
-            <div className="button w-60 h-16 flex items-center justify-center border rounded-sm border-white cursor-pointer">
-              <Link href={buttonHref} className="text-lg font-medium">
+            <div className="button w-60 h-16 flex items-center justify-center border rounded-sm border-white cursor-pointer lg:w-96 lg:h-24">
+              <Link href={buttonHref} className="text-lg font-medium lg:text-3xl">
                 {content.button}
               </Link>
             </div>
@@ -57,6 +57,7 @@ export const IntroSection = (props: IntroSectionProps) => {
               onClick={() => {
                 setIsMuted(!isMuted);
               }}
+              className="md:w-10 lg:w-12"
               />
             </div>
           </div>
