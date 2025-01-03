@@ -30,7 +30,7 @@ export const IntroSection = (props: IntroSectionProps) => {
 
   return (
     <section className="relative section__intro first text-white h-screen">
-        <div className="main-content absolute bottom-24 md:bottom-16 z-10 px-5 w-full md:pl-12 md:pr-12 lg:pl-14 lg:pr-16 xl:pl-24 xl:pr-24 xl:bottom-10">
+        <div className="main-content absolute bottom-24 md:bottom-16 z-10 px-5 w-full md:pl-12 md:pr-12 lg:pl-14 lg:pr-16 lg:bottom-20 xl:pl-24 xl:pr-24 xl:bottom-20">
           <h1
             dangerouslySetInnerHTML={{
               __html: content.desktop.title,
