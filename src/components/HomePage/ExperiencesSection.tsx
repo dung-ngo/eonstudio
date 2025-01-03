@@ -93,7 +93,7 @@ export const ExperiencesSection = (props: ExperiencesSectionProps) => {
                 alt="experiences"
               />
             </div>
-            <div className="second-content mx-5 mt-10 md:py-5 md:px-5 lg:pt-16">
+            <div className="second-content mx-5 mt-10 md:py-5 md:px-5 lg:pt-16 lg:mx-10">
               <h1
                 dangerouslySetInnerHTML={{
                   __html: mainContent.desktop.title,

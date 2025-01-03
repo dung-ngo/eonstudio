@@ -1,4 +1,5 @@
 import React from "react";
+import "@/styles/ContactUsSection.css";
 import { CONTENT } from "@/app/utils/constants";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,12 +7,12 @@ import Link from "next/link";
 export const ContactUsSection = () => {
   const handleSubmit = () => {};
   return (
-    <section id="#contact-us" className="section__form-contact h-screen bg-white px-6 pt-44 md:pt-0 md:px-0 text-black">
+    <section id="#contact-us" className="section__form-contact h-screen bg-white text-black">
       {/* DESKTOP SCREEN */}
       <div className="hidden md:block">
         <div className="flex">
-          <div className="w-3/4 text-black pl-32 pt-40">
-            <h1 className="text-3xl md:text-6xl mb-5 font-semibold md:font-semibold">
+          <div className="w-3/4 text-black md:w-4/6 md:pl-12 md:pr-2 md:pt-72 lg:pt-96 lg:pl-14 lg:pr-2 xl:pt-52 xl:pl-24 ">
+            <h1 className="md:text-3xl lg:text-4xl xl:text-6xl xl:mb-5 font-semibold md:font-semibold ">
               Contact Us
             </h1>
             <form onSubmit={handleSubmit}>
@@ -20,7 +21,7 @@ export const ContactUsSection = () => {
                   <div className="form-group">
                     <label
                       htmlFor="name"
-                      className="home__font-rader font-bold text-md block"
+                      className="home__font-rader font-bold block text-xl"
                     >
                       My name is
                     </label>
@@ -30,13 +31,13 @@ export const ContactUsSection = () => {
                       name="name"
                       required
                       placeholder="Your name"
-                      className="w-full focus:outline-none leading-10 text-xl placeholder:text-2xl placeholder:text-gray-300"
+                      className="w-full focus:outline-none leading-10 text-2xl placeholder:text-2xl placeholder:text-gray-300"
                     />
                   </div>
-                  <div className="form-group mt-3">
+                  <div className="form-group mt-5">
                     <label
                       htmlFor="mobile"
-                      className="home__font-rader font-bold text-md block"
+                      className="home__font-rader font-bold block text-xl"
                     >
                       My phone number is
                     </label>
@@ -46,12 +47,12 @@ export const ContactUsSection = () => {
                       name="mobile"
                       required
                       placeholder="Your phone number"
-                      className="w-full focus:outline-none leading-10 text-xl placeholder:text-2xl placeholder:text-gray-300"
+                      className="w-full focus:outline-none leading-10 text-2xl placeholder:text-2xl placeholder:text-gray-300"
                     />
                   </div>
-                  <div className="form-group mt-3">
-                    <label htmlFor="work" className="font-bold text-md block">
-                      <span className="home__font-rader">I work at</span>
+                  <div className="form-group mt-3 md:mt-10 lg:mt-10">
+                    <label htmlFor="work" className="home__font-rader font-bold block text-xl">
+                      I work at
                     </label>
                     <input
                       type="text"
@@ -59,13 +60,13 @@ export const ContactUsSection = () => {
                       name="work"
                       required
                       placeholder="Your company"
-                      className="w-full focus:outline-none leading-10 text-xl placeholder:text-2xl placeholder:text-gray-300"
+                      className="w-full focus:outline-none leading-10 text-2xl placeholder:text-2xl placeholder:text-gray-300"
                     />
                   </div>
-                  <div className="form-group mt-3">
+                  <div className="form-group mt-3 md:mt-10 lg:mt-10">
                     <label
                       htmlFor="reachMeAt"
-                      className="font-bold text-md block"
+                      className="home__font-rader font-bold block text-xl"
                     >
                       Reach me at
                     </label>
@@ -75,7 +76,7 @@ export const ContactUsSection = () => {
                       name="reachMeAt"
                       required
                       placeholder="Your@email.com"
-                      className="w-full focus:outline-none leading-10 text-xl placeholder:text-2xl placeholder:text-gray-300"
+                      className="w-full focus:outline-none leading-10 text-2xl placeholder:text-2xl placeholder:text-gray-300"
                     />
                   </div>
                 </div>
@@ -83,7 +84,7 @@ export const ContactUsSection = () => {
                   <div className="form-group">
                     <label
                       htmlFor="message"
-                      className="font-bold text-md block"
+                      className="home__font-rader font-bold block text-xl"
                     >
                       Message
                     </label>
@@ -92,7 +93,7 @@ export const ContactUsSection = () => {
                       name="message"
                       required
                       placeholder="Start typing here..."
-                      className="w-full focus:outline-none leading-10 text-xl placeholder:text-2xl placeholder:text-gray-300"
+                      className="w-full focus:outline-none leading-10 text-2xl placeholder:text-2xl placeholder:text-gray-300"
                     ></textarea>
                   </div>
                 </div>
@@ -100,13 +101,13 @@ export const ContactUsSection = () => {
 
               <button
                 type="submit"
-                className="submit-btn font-bold border border-black py-2 px-10 text-md mt-20 rounded-md"
+                className="submit-btn font-bold border border-black py-2 px-10 text-md mt-20 rounded-md md:w-48 md:h-14 md:text-xl lg:text-3xl lg:w-60 lg:h-20"
               >
                 Submit
               </button>
             </form>
           </div>
-          <div className="w-1/4 text-white">
+          <div className="w-1/4 text-white md:w-2/6">
             <div className="h-screen relative bg-black pl-10 pr-5 pt-40">
               <div className="mb-2 text-lg font-bold">
                 {CONTENT.contacts.response}
@@ -199,7 +200,7 @@ export const ContactUsSection = () => {
       </div>
 
       {/* MOBILE SCREEN */}
-      <div className="block md:hidden pl-2">
+      <div className="block md:hidden mobile pt-32 pl-8">
         <h1 className="text-4xl md:text-6xl mb-8 font-extrabold md:font-semibold">
           Contact Us
         </h1>

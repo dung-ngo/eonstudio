@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import "@/styles/IntroSection.css";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -43,7 +44,7 @@ export const IntroSection = (props: IntroSectionProps) => {
             className="hidden md:block mb-8 text-lg font-semibold"
           ></p>
           <div className="flex justify-between w-full">
-            <div className="button w-60 h-16 flex items-center justify-center border rounded-sm border-white cursor-pointer lg:w-96 lg:h-24">
+            <div className="button flex items-center justify-center border rounded-sm border-white cursor-pointer w-44 h-12 md:w-72 md:h-16 lg:w-96 lg:h-24">
               <Link href={buttonHref} className="text-lg font-medium lg:text-3xl">
                 {content.button}
               </Link>

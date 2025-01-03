@@ -73,7 +73,7 @@ export const CaseStudySection = (props: CaseStudySectionProps) => {
                 alt="case-study"
               />
             </div>
-            <div className="second-content mx-5 mt-10 md:pt-16 md:pb-5 md:px-5 lg:pt-16">
+            <div className="second-content mx-5 mt-10 md:pt-16 md:pb-5 md:px-5 lg:pt-16 lg:mx-10">
               <h1
                 dangerouslySetInnerHTML={{
                   __html: mainContent.desktop.title,
@@ -86,7 +86,7 @@ export const CaseStudySection = (props: CaseStudySectionProps) => {
                 }}
                 className="mt-2 mb-8 home__text-gray-82 md:text-2xl md:mb-10 lg:text-3xl lg:mb-20 lg:leading-10"
               ></p>
-              <div className="button border home__border-gray rounded-sm cursor-pointer z-10 flex items-center justify-center w-60 h-14 md:w-72 md:h-16 lg:w-96 lg:h-24">
+              <div className="button border home__border-gray rounded-sm cursor-pointer z-10 flex items-center justify-center w-44 h-12 md:w-72 md:h-16 lg:w-96 lg:h-24">
                 <Link href={buttonHref} className="text-lg md:text-2xl lg:text-3xl">
                   {mainContent.button}
                 </Link>

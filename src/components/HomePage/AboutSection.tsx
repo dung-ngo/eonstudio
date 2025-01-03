@@ -89,7 +89,7 @@ export const AboutSection = (props: AboutSectionProps) => {
                 ></p>
               </div>
               <div className="flex justify-center">
-                <div className="button w-56 h-14 flex justify-center items-center border border-white rounded-sm z-10 md:w-72 md:h-16 lg:w-96 lg:h-24">
+                <div className="button flex justify-center items-center border border-white rounded-sm z-10 w-44 h-12 md:w-72 md:h-16 lg:w-96 lg:h-24">
                   <Link href={buttonHref} className="text-lg md:text-2xl lg:text-3xl">
                     {mainContent.button}
                   </Link>

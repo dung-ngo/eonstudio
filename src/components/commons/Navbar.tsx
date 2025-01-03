@@ -14,16 +14,13 @@ const Navbar = (props: NavbarProps): JSX.Element => {
   const { sectionClassName } = props;
   const [iconSrc, setIconSrc] = useState<string>(LOGOS.default);
   const [isGray, setIsGray] = useState<boolean>(false);
-
-  const isMobile =
-    typeof window !== "undefined" &&
-    window.matchMedia("(max-width: 768px)").matches;
+  const isDesktop = typeof window !== "undefined" && window.matchMedia("(min-width: 1025px)").matches;
 
   useEffect(() => {
     const updateIconAndColor = () => {
       switch (sectionClassName) {
         case "section__about-us":
-          setIconSrc(isMobile ? LOGOS.default : LOGOS.black);
+          setIconSrc(isDesktop ? LOGOS.black : LOGOS.default);
           setIsGray(false);
           break;
         case "section__experiences":
@@ -32,12 +29,12 @@ const Navbar = (props: NavbarProps): JSX.Element => {
           setIsGray(true);
           break;
         case "section__blog":
-          setIconSrc(LOGOS.black);
-          setIsGray(!isMobile);
+          setIconSrc(isDesktop ? LOGOS.black : LOGOS.default);
+          setIsGray(isDesktop ? true : false);
           break;
         case "section__form-contact":
           setIconSrc(LOGOS.black);
-          setIsGray(isMobile);
+          setIsGray(isDesktop ? false : true);
           break;
         default:
           setIconSrc(LOGOS.default);
@@ -46,7 +43,7 @@ const Navbar = (props: NavbarProps): JSX.Element => {
       }
     };
     updateIconAndColor();
-  }, [sectionClassName, isMobile]);
+  }, [sectionClassName, isDesktop]);
 
   // useEffect(() => {
   //   hamburgerMenuColor();
