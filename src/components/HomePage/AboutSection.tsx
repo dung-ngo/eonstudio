@@ -40,7 +40,7 @@ export const AboutSection = (props: AboutSectionProps) => {
                 className="mb-8 text-lg home__text-gray-82 font-semibold"
               ></p>
               {buttonHref && (
-                <div className="button border home__border-gray rounded-sm cursor-pointer z-10 flex items-center justify-center md:w-60 md:h-14">
+                <div className="button border home__border-gray rounded-sm cursor-pointer z-10 flex items-center justify-center w-60 h-14">
                   <Link href="/about" className="text-xl">
                     {mainContent.button}
                   </Link>

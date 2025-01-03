@@ -29,7 +29,7 @@ export const ContactsMobileSection = () => {
             <Link href="">{CONTENT.contacts.privacy}</Link>
           </li>
         </ul>
-        <ul className="absolute bottom-0 mb-20">
+        <ul className="absolute bottom-5 mb-20">
           <li className="flex mb-8">
             <Link href="/" className="mr-8">
               <div className="relative">

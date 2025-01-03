@@ -120,7 +120,7 @@ export const BlogSection = () => {
       </div>
 
       {/* MOBILE SCREEN */}
-      <div className="block xl:hidden top-screen text-white pt-24 mb-3 md:pt-36 md:mb-5 text-center lg:pt-52">
+      <div className="block xl:hidden top-screen text-white pt-24 mb-3 md:pt-36 text-center lg:pt-52">
         <h1
           dangerouslySetInnerHTML={{
             __html: CONTENT.blog.title,

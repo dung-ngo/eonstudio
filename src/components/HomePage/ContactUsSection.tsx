@@ -7,7 +7,7 @@ import Link from "next/link";
 export const ContactUsSection = () => {
   const handleSubmit = () => {};
   return (
-    <section id="#contact-us" className="section__form-contact h-screen bg-white text-black">
+    <section id="contact-us" className="section__form-contact h-screen bg-white text-black">
       {/* DESKTOP SCREEN */}
       <div className="hidden md:block">
         <div className="flex">
@@ -101,7 +101,7 @@ export const ContactUsSection = () => {
 
               <button
                 type="submit"
-                className="submit-btn font-bold border border-black py-2 px-10 text-md mt-20 rounded-md md:w-48 md:h-14 md:text-xl lg:text-3xl lg:w-60 lg:h-20"
+                className="submit-btn font-bold border border-black py-2 px-10 text-xl mt-20 rounded-md w-56 h-14"
               >
                 Submit
               </button>
