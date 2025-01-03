@@ -4,6 +4,23 @@ import { CONTENT } from "@/app/utils/constants";
 import Link from "next/link";
 import Image from "next/image";
 
+interface BlogSectionProps {
+  title: string;
+  text: string;
+  viewAll: string;
+  newsTitle1: string;
+  newsBrief1: string;
+  newsTitle2: string;
+  newsBrief2: string;
+  newsTitle3: string;
+  newsBrief3: string;
+  desktop: {
+      text: string;
+      newsTitle1: string;
+      newsTitle3: string;
+  }
+}
+
 export const BlogSection = () => {
   return (
     <section className="section__blog h-screen home__bg-gray xl:bg-white px-5 md:px-6">
@@ -141,7 +158,7 @@ export const BlogSection = () => {
             <p
               className="text-slate-400 text-sm font-bold mt-2 md:text-lg md:mt-3 lg:text-2xl lg:mt-5"
               dangerouslySetInnerHTML={{
-                __html: (CONTENT.blog as any)[`newsBrief${index + 1}`],
+                __html: CONTENT.blog[`newsBrief${index + 1}` as keyof BlogSectionProps],
               }}
             ></p>
           </div>
