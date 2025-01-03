@@ -30,7 +30,6 @@ export const HomePage: FC = () => {
     });
     const handleSectionBackground = (section: Element) => {
       const sectionClass = getSectionClassname(section.className);
-      console.log("sectionClass", sectionClass);
       setIsIntroSection(sectionClass === "section__intro");
       handleProps(sectionClass);
     };
