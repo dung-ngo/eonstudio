@@ -47,7 +47,7 @@ const useSmoothScroll = () => {
           }
         }
         scrollToSection(currentSection);
-      }, 800);
+      }, 400);
     };
 
     // Handle Touch Scroll
@@ -76,7 +76,7 @@ const useSmoothScroll = () => {
           }
         }
         scrollToSection(currentSection);
-      }, 800);
+      }, 400);
     };
 
     // Add Event Listeners

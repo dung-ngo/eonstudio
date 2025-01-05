@@ -4,7 +4,6 @@ import { FC, useLayoutEffect, useRef, useState } from "react";
 import "@/styles/HomePage.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useProps } from "@/context/PropsContext";
 import { BlogSection } from "@/components/HomePage/BlogSection";
 import { ContactsMobileSection } from "@/components/HomePage/ContactsMobileSection";
 import { ContactUsSection } from "@/components/HomePage/ContactUsSection";
@@ -14,11 +13,12 @@ import { ExperiencesSection } from "./ExperiencesSection";
 import { AboutSection } from "./AboutSection";
 import { CaseStudySection } from "@/components/HomePage/CaseStudySection";
 import useSmoothScroll from "@/hooks/useSmoothScroll";
+import { store } from "@/store/store";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const HomePage: FC = () => {
-  const handleProps = useProps();
+  const { isMenuOpen, setSectionClassName } = store();
   const mainRef = useRef<HTMLDivElement>(null);
   const verticalScrollRef = useRef<HTMLDivElement>(null);
   const [isIntroSection, setIsIntroSection] = useState<boolean>(true);
@@ -31,7 +31,7 @@ export const HomePage: FC = () => {
     const handleSectionBackground = (section: Element) => {
       const sectionClass = getSectionClassname(section.className);
       setIsIntroSection(sectionClass === "section__intro");
-      handleProps(sectionClass);
+      setSectionClassName(sectionClass);
     };
     const sections = document.querySelectorAll("section");
     sections.forEach((section) => {
@@ -47,38 +47,6 @@ export const HomePage: FC = () => {
     });
   }, []);
 
-  // useEffect(() => {
-  //   const smoothScroll = () => {
-  //     const sections = document.querySelectorAll('section');
-  //     let currentSection = 0;
-  //     const scrollToSection = (index:number) => {
-  //       sections[index].scrollIntoView({
-  //         behavior: 'smooth',
-  //         block: 'start',
-  //         inline: 'nearest',
-  //       });
-  //     };
-  //     const handleScroll = (e: any) => {
-  //       if (e.deltaY > 0) {
-  //         if (currentSection < sections.length - 1) {
-  //           currentSection++;
-  //         }
-  //       } else {
-  //         if (currentSection > 0) {
-  //           currentSection--;
-  //         }
-  //       }
-  //       currentSection = Math.max(0, Math.min(currentSection, sections.length - 1));
-  //       scrollToSection(currentSection);
-  //     };
-  //     document.addEventListener('wheel', handleScroll);
-  //     return () => {
-  //       document.removeEventListener('wheel', handleScroll);
-  //     };
-  //   };
-  //   smoothScroll();
-  // }, []);
-
   const getSectionClassname = (text: string) => {
     const classes = text.split(" ");
     return classes.find((className) => className.startsWith("section__")) || "";
@@ -88,7 +56,7 @@ export const HomePage: FC = () => {
   return (
     <div className="home-container md:px-24">
       <main ref={mainRef}>
-        <div className="vertical-scroll" ref={verticalScrollRef}>
+        <div className={`vertical-scroll nav-menu  ${isMenuOpen ? "open" : ""}`} ref={verticalScrollRef}>
           <IntroSection
             content={CONTENT.intro}
             buttonHref="#contact-us"

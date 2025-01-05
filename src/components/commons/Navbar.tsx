@@ -5,56 +5,51 @@ import "@/styles/Navbar.css";
 import Image from "next/image";
 import Link from "next/link";
 import { CONTENT, LOGOS } from "@/app/utils/constants";
+import { store } from "@/store/store";
 
-interface NavbarProps {
-  sectionClassName: string;
-}
-
-const Navbar = (props: NavbarProps): JSX.Element => {
-  const { sectionClassName } = props;
+const Navbar = (): JSX.Element => {
+  const { setIsMenuOpen, sectionClassName } = store();
   const [iconSrc, setIconSrc] = useState<string>(LOGOS.default);
   const [isGray, setIsGray] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const isTablet = typeof window !== "undefined" && window.matchMedia("(min-width: 768px) and (max-width: 1024px)").matches;
   const isDesktop = typeof window !== "undefined" && window.matchMedia("(min-width: 1025px)").matches;
 
   useEffect(() => {
+    console.log("sectionClassName11", sectionClassName);
     const updateIconAndColor = () => {
+      setIsMenuOpen(isOpen);
+      if (isOpen) {
+        setIsGray(true);
+        return;
+      }
+      let iconSrc = LOGOS.default;
+      let isGray = false;
       switch (sectionClassName) {
         case "section__about-us":
-          setIconSrc(isDesktop ? LOGOS.black : LOGOS.default);
-          setIsGray(false);
+          iconSrc = isDesktop ? LOGOS.black : LOGOS.default;
           break;
         case "section__experiences":
         case "section__case-study":
-          setIconSrc(LOGOS.black);
-          setIsGray(true);
+          iconSrc = LOGOS.black;
+          isGray = true;
           break;
         case "section__blog":
-          setIconSrc(isDesktop ? LOGOS.black : LOGOS.default);
-          setIsGray(isDesktop ? true : false);
+          iconSrc = isDesktop ? LOGOS.black : LOGOS.default;
+          isGray = isDesktop;
           break;
         case "section__form-contact":
-          setIconSrc(LOGOS.black);
-          setIsGray(isDesktop ? false : true);
+          iconSrc = LOGOS.black;
+          isGray = !(isDesktop || isTablet);
           break;
         default:
-          setIconSrc(LOGOS.default);
-          setIsGray(false);
           break;
       }
+      setIconSrc(iconSrc);
+      setIsGray(isGray);
     };
     updateIconAndColor();
-  }, [sectionClassName, isDesktop]);
-
-  // useEffect(() => {
-  //   hamburgerMenuColor();
-  // }, [sectionClassName]);
-
-  // const hamburgerMenuColor = () => {
-  //   const isSpecialSection =
-  //     sectionClassName === "section--about" ||
-  //     sectionClassName === "section--form-contact";
-  //   return isOpen || (isGray && !isSpecialSection) ? "bg-black" : "bg-white";
-  // };
+  }, [sectionClassName, isOpen]);
 
   return (
     <nav className="fixed top-0 w-full bg-transparent text-white z-10">
@@ -67,10 +62,10 @@ const Navbar = (props: NavbarProps): JSX.Element => {
                 width={100}
                 height={100}
                 alt="company-logo"
-                className="w-14 h-14 mr-3 lg:w-24 lg:h-24"
+                className="w-14 h-14 mr-2 lg:w-24 lg:h-24"
               />
-              {sectionClassName === "section--intro" && (
-                <div className="font-pp-rader text-xl font-semibold py-3 flex items-center">
+              {sectionClassName === "section__intro" && (
+                <div className="font-pp-rader text-xl font-semibold pt-2 flex items-center">
                   {CONTENT.logoLabel}
                 </div>
               )}
@@ -94,9 +89,8 @@ const Navbar = (props: NavbarProps): JSX.Element => {
           </div>
           <div className="">
             <div
-              // className={`hamburger ${isOpen ? "open" : ""}`}
-              // onClick={() => setIsOpen(!isOpen)}
-              className="hamburger"
+              className={`hamburger ${isOpen ? "open" : ""}`}
+              onClick={() => setIsOpen(!isOpen)}
             >
               <span className={isGray ? "home__bg-gray" : "bg-white"}></span>
               <span className={isGray ? "home__bg-gray" : "bg-white"}></span>
@@ -105,49 +99,55 @@ const Navbar = (props: NavbarProps): JSX.Element => {
           </div>
         </div>
       </div>
-      {/* {isOpen && (
-        <div className="md:hidden fixed inset-0 bg-white text-black z-20">
-          <div className="flex justify-between items-center p-4">
+      {isOpen && (
+        <div className="nav-menu fixed inset-y-0 right-0 bg-white text-black z-20 w-full px-5 pt-5 md:w-1/3 xl:w-1/5">
+          <div className="flex justify-between items-center pr-4 py-4">
             <Link href="/" className="text-xl font-bold">
               <Image
-                src={iconSrc}
+                src="/eon-studios-black.png"
                 width={100}
-                height={0}
+                height={100}
                 alt="company-logo"
-                className="w-12"
+                className="w-16 lg:w-24 lg:h-24 xl:w-20 xl:h-20"
               />
             </Link>
             <div
-              className={`hamburger md:hidden ${isOpen ? "open" : ""}`}
+              className={`hamburger ${isOpen ? "open" : ""}`}
               onClick={() => setIsOpen(!isOpen)}
             >
-              <span className={hamburgerMenuColor()}></span>
-              <span className={hamburgerMenuColor()}></span>
-              <span className={hamburgerMenuColor()}></span>
+              <span className={isGray ? "home__bg-gray" : "bg-white"}></span>
+              <span className={isGray ? "home__bg-gray" : "bg-white"}></span>
+              <span className={isGray ? "home__bg-gray" : "bg-white"}></span>
             </div>
           </div>
-          <div className="flex flex-col mt-8">
+          <div className="flex flex-col mt-8 pl-2 md:pl-2 lg:pl-4">
             <Link
               href="/about"
-              className="block px-4 py-4 text-xl hover:bg-gray-100"
+              className="block py-4 lg:py-6 text-2xl font-bold hover:bg-gray-100"
             >
               About
             </Link>
             <Link
-              href="/services"
-              className="block px-4 py-4 text-xl hover:bg-gray-100"
+              href="/case-study"
+              className="block py-4 lg:py-6 text-2xl font-bold hover:bg-gray-100"
             >
-              Services
+              Case Study
+            </Link>
+            <Link
+              href="/blog"
+              className="block py-4 lg:py-6 text-2xl font-bold hover:bg-gray-100"
+            >
+              Blog
             </Link>
             <Link
               href="/contact"
-              className="block px-4 py-4 text-xl hover:bg-gray-100"
+              className="block py-4 lg:py-6 text-2xl font-bold hover:bg-gray-100"
             >
-              Contact
+              Contact Us
             </Link>
           </div>
         </div>
-      )} */}
+      )}
     </nav>
   );
 };

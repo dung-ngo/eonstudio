@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/commons/Navbar";
 import Scrollbar from "@/components/commons/Scrollbar";
-import { PropsProvider } from "@/context/PropsContext";
 
 const ppRader = localFont({
   src: "./fonts/PPRader.otf",
@@ -25,14 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const [sectionClassName, setSectionClassName] = useState<string>("");
-
-  const handleBgClassName = (sectionClass: string) => {
-    setSectionClassName(sectionClass);
-  };
 
   return (
-    <PropsProvider value={handleBgClassName}>
       <html lang="en">
         <head>
           <title>Eon Studio</title>
@@ -43,12 +36,11 @@ export default function RootLayout({
         <body
           className={`${ppRader.variable} ${neueMontreal.variable} antialiased`}
         >
-          <Navbar sectionClassName={sectionClassName} />
+          <Navbar />
           <Scrollbar>
             <div ref={wrapperRef}>{children}</div>
           </Scrollbar>
         </body>
       </html>
-    </PropsProvider>
   );
 }
