@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useLayoutEffect, useRef, useState } from "react";
+import { FC, useEffect, useLayoutEffect, useRef, useState } from "react";
 import "@/styles/HomePage.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -23,28 +23,68 @@ export const HomePage: FC = () => {
   const verticalScrollRef = useRef<HTMLDivElement>(null);
   const [isIntroSection, setIsIntroSection] = useState<boolean>(true);
 
-  useLayoutEffect(() => {
-    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    ScrollTrigger.defaults({
-      scroller: "body",
-    });
-    const handleSectionBackground = (section: Element) => {
-      const sectionClass = getSectionClassname(section.className);
-      setIsIntroSection(sectionClass === "section__intro");
-      setSectionClassName(sectionClass);
-    };
-    const sections = document.querySelectorAll("section");
-    sections.forEach((section) => {
-      ScrollTrigger.create({
-        trigger: section,
-        start: "top 60%",
-        end: "bottom 40%",
-        invalidateOnRefresh: true,
-        fastScrollEnd: true,
-        onEnter: () => handleSectionBackground(section),
-        onEnterBack: () => handleSectionBackground(section),
+  // useEffect(() => {
+  //   // const scrollContainers = document.querySelector(".scroll-container");
+  //   const scrollContainers = mainRef.current;
+  //   console.log("scrollContainers ", scrollContainers);
+  //   if (!scrollContainers) return;
+  //   ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  //   ScrollTrigger.defaults({
+  //     scroller: scrollContainers,
+  //   });
+  //   const handleSectionBackground = (section: Element) => {
+  //     console.log("sectionClass ", section);
+  //     const sectionClass = getSectionClassname(section.className);
+  //     setIsIntroSection(sectionClass === "section__intro");
+  //     setSectionClassName(sectionClass);
+  //   };
+  //   const sections = document.querySelectorAll("section");
+  //   console.log("sectionssssss ", sections);
+  //   sections.forEach((section) => {
+  //     ScrollTrigger.create({
+  //       trigger: section,
+  //       start: "top 60%",
+  //       end: "bottom 40%",
+  //       invalidateOnRefresh: true,
+  //       fastScrollEnd: true,
+  //       onEnter: () => handleSectionBackground(section),
+  //       onEnterBack: () => handleSectionBackground(section),
+  //     });
+  //   });
+  //   return () => {
+  //     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  //   };
+  // }, []);
+
+  useEffect(() => {
+    const handleSectionEnter = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Trigger the action when the section enters the viewport
+          const sectionClass = getSectionClassname(
+            (entry.target as Element).className
+          );
+          console.log("sectionClass ", sectionClass);
+          setIsIntroSection(sectionClass === "section__intro");
+          setSectionClassName(sectionClass);
+        }
       });
+    };
+
+    // Create a new IntersectionObserver
+    const observer = new IntersectionObserver(handleSectionEnter, {
+      root: null, // Observe visibility relative to the viewport
+      threshold: 0.5, // Trigger when 50% of the section is visible
     });
+
+    // Observe all sections
+    const sections = document.querySelectorAll("section");
+    sections.forEach((section) => observer.observe(section));
+
+    // Cleanup on unmount
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   const getSectionClassname = (text: string) => {
@@ -56,7 +96,10 @@ export const HomePage: FC = () => {
   return (
     <div className="home-container md:px-24">
       <main ref={mainRef}>
-        <div className={`vertical-scroll nav-menu  ${isMenuOpen ? "open" : ""}`} ref={verticalScrollRef}>
+        <div
+          className={`vertical-scroll nav-menu  ${isMenuOpen ? "open" : ""}`}
+          ref={verticalScrollRef}
+        >
           <IntroSection
             content={CONTENT.intro}
             buttonHref="#contact-us"

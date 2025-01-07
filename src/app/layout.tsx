@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/commons/Navbar";
-import Scrollbar from "@/components/commons/Scrollbar";
+import CustomScrollbar from "@/components/commons/Scrollbar";
 
 const ppRader = localFont({
   src: "./fonts/PPRader.otf",
@@ -26,21 +26,31 @@ export default function RootLayout({
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   return (
-      <html lang="en">
-        <head>
-          <title>Eon Studio</title>
-          <meta name="description" content="Eon Studio is a creative agency that specializes in branding, photography, design, and web development." />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-          <link rel="icon" href="/logo-white.svg" />
-        </head>
-        <body
-          className={`${ppRader.variable} ${neueMontreal.variable} antialiased`}
+    <html lang="en">
+      <head>
+        <title>Eon Studio</title>
+        <meta
+          name="description"
+          content="Eon Studio is a creative agency that specializes in branding, photography, design, and web development."
+        />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+        <link rel="icon" href="/logo-white.svg" />
+      </head>
+      <body
+        className={`${ppRader.variable} ${neueMontreal.variable} antialiased`}
+      >
+        <Navbar />
+        <div
+        // ref={wrapperRef}
         >
-          <Navbar />
-          <Scrollbar>
-            <div ref={wrapperRef}>{children}</div>
-          </Scrollbar>
-        </body>
-      </html>
+          <CustomScrollbar>
+            <div style={{ height: "100vh" }}>{children}</div>
+          </CustomScrollbar>
+        </div>
+      </body>
+    </html>
   );
 }

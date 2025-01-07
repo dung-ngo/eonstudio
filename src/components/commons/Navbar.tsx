@@ -8,15 +8,18 @@ import { CONTENT, LOGOS } from "@/app/utils/constants";
 import { store } from "@/store/store";
 
 const Navbar = (): JSX.Element => {
-  const { setIsMenuOpen, sectionClassName } = store();
+  const { setIsMenuOpen, sectionClassName, setScrollbarColor } = store();
   const [iconSrc, setIconSrc] = useState<string>(LOGOS.default);
   const [isGray, setIsGray] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const isTablet = typeof window !== "undefined" && window.matchMedia("(min-width: 768px) and (max-width: 1024px)").matches;
-  const isDesktop = typeof window !== "undefined" && window.matchMedia("(min-width: 1025px)").matches;
+  const isTablet =
+    typeof window !== "undefined" &&
+    window.matchMedia("(min-width: 768px) and (max-width: 1024px)").matches;
+  const isDesktop =
+    typeof window !== "undefined" &&
+    window.matchMedia("(min-width: 1025px)").matches;
 
   useEffect(() => {
-    console.log("sectionClassName11", sectionClassName);
     const updateIconAndColor = () => {
       setIsMenuOpen(isOpen);
       if (isOpen) {
@@ -47,6 +50,7 @@ const Navbar = (): JSX.Element => {
       }
       setIconSrc(iconSrc);
       setIsGray(isGray);
+      setScrollbarColor(isGray ? "var(--home-gray)" : "#fff");
     };
     updateIconAndColor();
   }, [sectionClassName, isOpen]);
