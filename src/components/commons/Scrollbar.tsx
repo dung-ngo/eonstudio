@@ -70,7 +70,7 @@ export const CustomScrollbar = ({
           gsap.to(customThumb, { scale: 1.2, duration: 0.2 }); // Highlight the thumb on drag
         },
         onRelease: () => {
-          gsap.to(customThumb, { scale: 1, duration: 0.2 }); // Reset thumb size
+          gsap.to(customThumb, { scale: 1.2, duration: 0.2 }); // Reset thumb size
         },
       });
 

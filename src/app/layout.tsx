@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/commons/Navbar";
@@ -23,8 +23,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const wrapperRef = useRef<HTMLDivElement>(null);
-
   return (
     <html lang="en">
       <head>
@@ -43,9 +41,7 @@ export default function RootLayout({
         className={`${ppRader.variable} ${neueMontreal.variable} antialiased`}
       >
         <Navbar />
-        <div
-        // ref={wrapperRef}
-        >
+        <div>
           <CustomScrollbar>
             <div style={{ height: "100vh" }}>{children}</div>
           </CustomScrollbar>

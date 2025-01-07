@@ -56,7 +56,7 @@ const Navbar = (): JSX.Element => {
   }, [sectionClassName, isOpen]);
 
   return (
-    <nav className="fixed top-0 w-full bg-transparent text-white z-10">
+    <nav className="fixed top-0 w-full bg-transparent text-white z-20">
       <div className="max-w-8xl mx-auto pl-3 pr-4 py-4 md:pl-9 md:pr-10 lg:pl-10 lg:pr-16 xl:pl-20 xl:pr-24">
         <div className="flex justify-between items-center h-14 md:h-20 lg:h-32">
           <div className="company-logo">
