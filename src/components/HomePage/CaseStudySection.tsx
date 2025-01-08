@@ -1,5 +1,5 @@
 import React from "react";
-import "@/styles/CaseStudySection.css";
+import "@/styles/components/CaseStudySection.css";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,8 +20,7 @@ interface CaseStudySectionProps {
 }
 
 export const CaseStudySection = (props: CaseStudySectionProps) => {
-  const { mainContent, buttonHref, imgSrc, imgAlt, imgClass } =
-    props;
+  const { mainContent, buttonHref, imgSrc, imgAlt, imgClass } = props;
 
   return (
     <>
@@ -78,7 +77,7 @@ export const CaseStudySection = (props: CaseStudySectionProps) => {
                 dangerouslySetInnerHTML={{
                   __html: mainContent.desktop.title,
                 }}
-                className="font-pp-rader text-2xl font-bold md:text-6xl lg:text-7xl"
+                className="text-2xl font-bold md:text-6xl lg:text-7xl"
               ></h1>
               <p
                 dangerouslySetInnerHTML={{
@@ -87,7 +86,10 @@ export const CaseStudySection = (props: CaseStudySectionProps) => {
                 className="mt-2 mb-8 home__text-gray-82 md:text-2xl md:mb-10 lg:text-3xl lg:mb-20 lg:leading-10"
               ></p>
               <div className="button border home__border-gray rounded-sm cursor-pointer z-10 flex items-center justify-center w-44 h-12 md:w-72 md:h-16 lg:w-96 lg:h-24">
-                <Link href={buttonHref} className="text-lg md:text-2xl lg:text-3xl">
+                <Link
+                  href={buttonHref}
+                  className="text-lg md:text-2xl lg:text-3xl"
+                >
                   {mainContent.button}
                 </Link>
               </div>

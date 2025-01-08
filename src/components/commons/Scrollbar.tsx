@@ -1,8 +1,8 @@
 import gsap from "gsap";
-import "@/styles/Scrollbar.css";
+import "@/styles/components/Scrollbar.css";
 import { Draggable } from "gsap/Draggable";
 import { useEffect, useRef } from "react";
-import { store } from "@/store/store";
+import { store } from "@/store";
 
 export const CustomScrollbar = ({
   children,
@@ -14,11 +14,19 @@ export const CustomScrollbar = ({
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const scrollContentRef = useRef<HTMLDivElement>(null);
   const customThumbRef = useRef<HTMLDivElement>(null);
+  console.log(
+    "current1 ",
+    scrollContainerRef,
+    scrollContentRef,
+    customThumbRef
+  );
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
     const scrollContent = scrollContentRef.current;
     const customThumb = customThumbRef.current;
+
+    console.log("current2 ", scrollContainer, scrollContent, customThumb);
 
     if (scrollContainer && scrollContent && customThumb) {
       // Update the height of the thumb dynamically

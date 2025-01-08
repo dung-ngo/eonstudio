@@ -1,5 +1,5 @@
 import React from "react";
-import "@/styles/BlogSection.css";
+import "@/styles/components/BlogSection.css";
 import { CONTENT } from "@/app/utils/constants";
 import Link from "next/link";
 import Image from "next/image";

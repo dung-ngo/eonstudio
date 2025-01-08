@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 const useSmoothScroll = () => {
   useEffect(() => {
-    const sections = document.querySelectorAll('section');
+    const sections = document.querySelectorAll("section");
     let currentSection = 0;
     let isScrolling = false; // Prevent simultaneous scroll events
     let touchStartY = 0;
@@ -15,8 +15,8 @@ const useSmoothScroll = () => {
     const scrollToSection = (index: number) => {
       if (sections[index]) {
         sections[index].scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
+          behavior: "smooth",
+          block: "start",
         });
       }
     };
@@ -80,15 +80,17 @@ const useSmoothScroll = () => {
     };
 
     // Add Event Listeners
-    document.addEventListener('wheel', handleWheel, { passive: false });
-    document.addEventListener('touchstart', handleTouchStart, { passive: true });
-    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+    document.addEventListener("wheel", handleWheel, { passive: false });
+    document.addEventListener("touchstart", handleTouchStart, {
+      passive: true,
+    });
+    document.addEventListener("touchmove", handleTouchMove, { passive: false });
 
     return () => {
       // Cleanup Event Listeners
-      document.removeEventListener('wheel', handleWheel);
-      document.removeEventListener('touchstart', handleTouchStart);
-      document.removeEventListener('touchmove', handleTouchMove);
+      document.removeEventListener("wheel", handleWheel);
+      document.removeEventListener("touchstart", handleTouchStart);
+      document.removeEventListener("touchmove", handleTouchMove);
     };
   }, []);
 };

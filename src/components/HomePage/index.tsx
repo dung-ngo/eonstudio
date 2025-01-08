@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, useEffect, useRef, useState } from "react";
-import "@/styles/HomePage.css";
+import "@/styles/components/HomePage.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BlogSection } from "@/components/HomePage/BlogSection";
@@ -13,14 +13,14 @@ import { ExperiencesSection } from "./ExperiencesSection";
 import { AboutSection } from "./AboutSection";
 import { CaseStudySection } from "@/components/HomePage/CaseStudySection";
 import useSmoothScroll from "@/hooks/useSmoothScroll";
-import { store } from "@/store/store";
+import { store } from "@/store";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const HomePage: FC = () => {
   const { isMenuOpen, setSectionClassName } = store();
-  const mainRef = useRef<HTMLDivElement>(null);
   const verticalScrollRef = useRef<HTMLDivElement>(null);
+  console.log("verticalScrollRef ", verticalScrollRef);
   const [isIntroSection, setIsIntroSection] = useState<boolean>(true);
 
   // useEffect(() => {
@@ -33,13 +33,11 @@ export const HomePage: FC = () => {
   //     scroller: scrollContainers,
   //   });
   //   const handleSectionBackground = (section: Element) => {
-  //     console.log("sectionClass ", section);
   //     const sectionClass = getSectionClassname(section.className);
   //     setIsIntroSection(sectionClass === "section__intro");
   //     setSectionClassName(sectionClass);
   //   };
   //   const sections = document.querySelectorAll("section");
-  //   console.log("sectionssssss ", sections);
   //   sections.forEach((section) => {
   //     ScrollTrigger.create({
   //       trigger: section,
@@ -64,7 +62,6 @@ export const HomePage: FC = () => {
           const sectionClass = getSectionClassname(
             (entry.target as Element).className
           );
-          console.log("sectionClass ", sectionClass);
           setIsIntroSection(sectionClass === "section__intro");
           setSectionClassName(sectionClass);
         }
@@ -74,7 +71,7 @@ export const HomePage: FC = () => {
     // Create a new IntersectionObserver
     const observer = new IntersectionObserver(handleSectionEnter, {
       root: null, // Observe visibility relative to the viewport
-      threshold: 0.5, // Trigger when 50% of the section is visible
+      threshold: 0.0001, // Trigger when 50% of the section is visible
     });
 
     // Observe all sections
@@ -95,7 +92,7 @@ export const HomePage: FC = () => {
 
   return (
     <div className="home-container md:px-24">
-      <main ref={mainRef}>
+      <main>
         <div
           className={`vertical-scroll nav-menu  ${isMenuOpen ? "open" : ""}`}
           ref={verticalScrollRef}

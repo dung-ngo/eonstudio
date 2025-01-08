@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import "@/styles/Navbar.css";
+import "@/styles/components/Navbar.css";
 import Image from "next/image";
 import Link from "next/link";
 import { CONTENT, LOGOS } from "@/app/utils/constants";
-import { store } from "@/store/store";
+import { store } from "@/store";
 
 const Navbar = (): JSX.Element => {
   const { setIsMenuOpen, sectionClassName, setScrollbarColor } = store();
@@ -69,9 +69,9 @@ const Navbar = (): JSX.Element => {
                 className="w-14 h-14 mr-2 lg:w-24 lg:h-24"
               />
               {sectionClassName === "section__intro" && (
-                <div className="font-pp-rader text-xl font-semibold pt-2 flex items-center">
+                <h1 className="text-xl font-semibold pt-2 flex items-center">
                   {CONTENT.logoLabel}
-                </div>
+                </h1>
               )}
             </Link>
           </div>

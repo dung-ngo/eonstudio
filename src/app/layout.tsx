@@ -1,22 +1,9 @@
 "use client";
 
 import React from "react";
-import localFont from "next/font/local";
-import "./globals.css";
+import "@/styles/main.css";
 import Navbar from "@/components/commons/Navbar";
 import CustomScrollbar from "@/components/commons/Scrollbar";
-
-const ppRader = localFont({
-  src: "./fonts/PPRader.otf",
-  variable: "--font-pp-rader",
-  weight: "100 900",
-});
-
-const neueMontreal = localFont({
-  src: "./fonts/PPNeueMontreal-book.otf",
-  variable: "--font-pp-neuemontreal",
-  weight: "100 900",
-});
 
 export default function RootLayout({
   children,
@@ -37,9 +24,7 @@ export default function RootLayout({
         />
         <link rel="icon" href="/logo-white.svg" />
       </head>
-      <body
-        className={`${ppRader.variable} ${neueMontreal.variable} antialiased`}
-      >
+      <body className="antialiased">
         <Navbar />
         <div>
           <CustomScrollbar>

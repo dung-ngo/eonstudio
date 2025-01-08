@@ -12,10 +12,6 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
-      fontFamily: {
-        "pp-rader": ["var(--font-pp-rader)", "sans-serif"],
-        "neue-montreal": ["var(--font-neue-montreal)", "sans-serif"],
-      },
     },
   },
   plugins: [],

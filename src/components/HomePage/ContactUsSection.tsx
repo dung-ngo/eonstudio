@@ -1,5 +1,5 @@
 import React from "react";
-import "@/styles/ContactUsSection.css";
+import "@/styles/components/ContactUsSection.css";
 import { CONTENT } from "@/app/utils/constants";
 import Image from "next/image";
 import Link from "next/link";
