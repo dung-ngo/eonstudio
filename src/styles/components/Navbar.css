@@ -3,7 +3,7 @@
   height: 20px;
   position: relative;
   transform: rotate(0deg);
-  transition: 0.5s ease-in-out;
+  /* transition: 0.5s ease-in-out; */
   cursor: pointer;
 }
 
@@ -16,7 +16,7 @@
   opacity: 1;
   left: 0;
   transform: rotate(0deg);
-  transition: 0.25s ease-in-out;
+  /* transition: 0.25s ease-in-out; */
 }
 
 .hamburger span:nth-child(1) {
@@ -38,7 +38,7 @@
 
 .hamburger.open span:nth-child(2) {
   opacity: 0;
-  left: 60px;
+  /* left: 60px; */
 }
 
 .hamburger.open span:nth-child(3) {

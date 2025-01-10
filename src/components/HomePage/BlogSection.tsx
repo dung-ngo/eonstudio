@@ -15,10 +15,10 @@ interface BlogSectionProps {
   newsTitle3: string;
   newsBrief3: string;
   desktop: {
-      text: string;
-      newsTitle1: string;
-      newsTitle3: string;
-  }
+    text: string;
+    newsTitle1: string;
+    newsTitle3: string;
+  };
 }
 
 export const BlogSection = () => {
@@ -29,19 +29,19 @@ export const BlogSection = () => {
         <div className="blog-top text-center">
           <h1
             dangerouslySetInnerHTML={{
-              __html: CONTENT.blog.title,
+              __html: CONTENT.HOME_PAGE.blog.title,
             }}
             className="text-black text-6xl font-bold"
           ></h1>
           <p
             className="text-slate-400 text-md font-bold"
             dangerouslySetInnerHTML={{
-              __html: CONTENT.blog.desktop.text,
+              __html: CONTENT.HOME_PAGE.blog.desktop.text,
             }}
           ></p>
           <div className="link flex justify-center pt-5">
             <Link href="/blog" className=" text-black text-md font-bold flex">
-              <div>{CONTENT.blog.viewAll}</div>
+              <div>{CONTENT.HOME_PAGE.blog.viewAll}</div>
               <Image
                 src="/icons/arrow-right.png"
                 width={30}
@@ -63,13 +63,13 @@ export const BlogSection = () => {
             />
             <h1
               dangerouslySetInnerHTML={{
-                __html: CONTENT.blog.desktop.newsTitle1,
+                __html: CONTENT.HOME_PAGE.blog.desktop.newsTitle1,
               }}
               className="text-3xl font-bold my-3"
             ></h1>
             <p
               dangerouslySetInnerHTML={{
-                __html: CONTENT.blog.newsBrief1,
+                __html: CONTENT.HOME_PAGE.blog.newsBrief1,
               }}
               className="font-semibold"
             ></p>
@@ -84,13 +84,13 @@ export const BlogSection = () => {
             />
             <h1
               dangerouslySetInnerHTML={{
-                __html: CONTENT.blog.newsTitle2,
+                __html: CONTENT.HOME_PAGE.blog.newsTitle2,
               }}
               className="text-3xl font-bold my-3"
             ></h1>
             <p
               dangerouslySetInnerHTML={{
-                __html: CONTENT.blog.newsBrief2,
+                __html: CONTENT.HOME_PAGE.blog.newsBrief2,
               }}
               className="font-semibold"
             ></p>
@@ -105,13 +105,13 @@ export const BlogSection = () => {
             />
             <h1
               dangerouslySetInnerHTML={{
-                __html: CONTENT.blog.desktop.newsTitle3,
+                __html: CONTENT.HOME_PAGE.blog.desktop.newsTitle3,
               }}
               className="text-3xl font-bold my-3"
             ></h1>
             <p
               dangerouslySetInnerHTML={{
-                __html: CONTENT.blog.newsBrief3,
+                __html: CONTENT.HOME_PAGE.blog.newsBrief3,
               }}
               className="font-semibold"
             ></p>
@@ -123,19 +123,21 @@ export const BlogSection = () => {
       <div className="block xl:hidden top-screen text-white pt-24 mb-3 md:pt-36 text-center lg:pt-52">
         <h1
           dangerouslySetInnerHTML={{
-            __html: CONTENT.blog.title,
+            __html: CONTENT.HOME_PAGE.blog.title,
           }}
           className="text-2xl font-bold md:text-6xl lg:text-7xl"
         ></h1>
         <p
           className="text-slate-400 text-md font-bold md:my-5 md:text-xl lg:text-2xl"
           dangerouslySetInnerHTML={{
-            __html: CONTENT.blog.text,
+            __html: CONTENT.HOME_PAGE.blog.text,
           }}
         ></p>
         <div className="h-14 flex justify-center items-center md:h-20">
           <Link href="/blog" className="flex">
-            <div className="text-md font-bold md:text-xl lg:text-2xl">{CONTENT.blog.viewAll}</div>
+            <div className="text-md font-bold md:text-xl lg:text-2xl">
+              {CONTENT.HOME_PAGE.blog.viewAll}
+            </div>
             <Image
               src="/icons/arrow-right-white.png"
               width={30}
@@ -147,22 +149,30 @@ export const BlogSection = () => {
         </div>
       </div>
       <div className="block xl:hidden bottom-screen text-white md:mx-5">
-        {(["newsTitle1", "newsTitle2", "newsTitle3"] as const).map((title, index) => (
-          <div key={index} className="py-5 px-6 border-b md:py-12 md:px-8 lg:py-16 lg:px-12">
-            <h2
-              dangerouslySetInnerHTML={{
-                __html: CONTENT.blog[title],
-              }}
-              className="text-xl font-bold md:text-3xl lg:text-5xl"
-            ></h2>
-            <p
-              className="text-slate-400 text-sm font-bold mt-2 md:text-lg md:mt-3 lg:text-2xl lg:mt-5"
-              dangerouslySetInnerHTML={{
-                __html: CONTENT.blog[`newsBrief${index + 1}` as keyof BlogSectionProps],
-              }}
-            ></p>
-          </div>
-        ))}
+        {(["newsTitle1", "newsTitle2", "newsTitle3"] as const).map(
+          (title, index) => (
+            <div
+              key={index}
+              className="py-5 px-6 border-b md:py-12 md:px-8 lg:py-16 lg:px-12"
+            >
+              <h2
+                dangerouslySetInnerHTML={{
+                  __html: CONTENT.HOME_PAGE.blog[title],
+                }}
+                className="text-xl font-bold md:text-3xl lg:text-5xl"
+              ></h2>
+              <p
+                className="text-slate-400 text-sm font-bold mt-2 md:text-lg md:mt-3 lg:text-2xl lg:mt-5"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    CONTENT.HOME_PAGE.blog[
+                      `newsBrief${index + 1}` as keyof BlogSectionProps
+                    ],
+                }}
+              ></p>
+            </div>
+          )
+        )}
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useEffect, useRef, useState } from "react";
+import { FC } from "react";
 import "@/styles/components/HomePage.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -14,14 +14,12 @@ import { AboutSection } from "./AboutSection";
 import { CaseStudySection } from "@/components/HomePage/CaseStudySection";
 import useSmoothScroll from "@/hooks/useSmoothScroll";
 import { store } from "@/store";
+import useSectionObserve from "@/hooks/useSectionObserve";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const HomePage: FC = () => {
-  const { isMenuOpen, setSectionClassName } = store();
-  const verticalScrollRef = useRef<HTMLDivElement>(null);
-  console.log("verticalScrollRef ", verticalScrollRef);
-  const [isIntroSection, setIsIntroSection] = useState<boolean>(true);
+  const { isMenuOpen, isIntroSection } = store();
 
   // useEffect(() => {
   //   // const scrollContainers = document.querySelector(".scroll-container");
@@ -54,69 +52,34 @@ export const HomePage: FC = () => {
   //   };
   // }, []);
 
-  useEffect(() => {
-    const handleSectionEnter = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Trigger the action when the section enters the viewport
-          const sectionClass = getSectionClassname(
-            (entry.target as Element).className
-          );
-          setIsIntroSection(sectionClass === "section__intro");
-          setSectionClassName(sectionClass);
-        }
-      });
-    };
-
-    // Create a new IntersectionObserver
-    const observer = new IntersectionObserver(handleSectionEnter, {
-      root: null, // Observe visibility relative to the viewport
-      threshold: 0.0001, // Trigger when 50% of the section is visible
-    });
-
-    // Observe all sections
-    const sections = document.querySelectorAll("section");
-    sections.forEach((section) => observer.observe(section));
-
-    // Cleanup on unmount
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
-  const getSectionClassname = (text: string) => {
-    const classes = text.split(" ");
-    return classes.find((className) => className.startsWith("section__")) || "";
-  };
   useSmoothScroll();
+  useSectionObserve();
 
   return (
     <div className="home-container md:px-24">
       <main>
-        <div
-          className={`vertical-scroll nav-menu  ${isMenuOpen ? "open" : ""}`}
-          ref={verticalScrollRef}
-        >
+        <div className={`nav-menu ${isMenuOpen ? "open" : ""}`}>
           <IntroSection
-            content={CONTENT.intro}
+            content={CONTENT.HOME_PAGE.intro}
             buttonHref="#contact-us"
             isIntroSection={isIntroSection}
             // videoSrc="intro-video.mp4"
           />
           <AboutSection
-            mainContent={CONTENT.about}
+            mainContent={CONTENT.HOME_PAGE.about}
             buttonHref="/about"
             imgSrc="/eon-studios-white.png"
+            imgWidth={300}
             imgAlt="eon-studios"
           />
           <ExperiencesSection
-            mainContent={CONTENT.experiences}
+            mainContent={CONTENT.HOME_PAGE.experiences}
             buttonHref="/services"
             imgSrc="/experiences.jpg"
             imgAlt="experiences"
           />
           <CaseStudySection
-            mainContent={CONTENT.casestudy}
+            mainContent={CONTENT.HOME_PAGE.casestudy}
             buttonHref="/case-study"
             imgSrc="/case-study.jpg"
             imgAlt="case-study"
@@ -124,7 +87,7 @@ export const HomePage: FC = () => {
           />
           <BlogSection />
           <ContactUsSection />
-          <ContactsMobileSection />
+          <ContactsMobileSection mainContent={CONTENT.HOME_PAGE.contacts} />
         </div>
       </main>
     </div>
