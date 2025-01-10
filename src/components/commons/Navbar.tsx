@@ -8,10 +8,11 @@ import { CONTENT, LOGOS } from "@/app/utils/constants";
 import { store } from "@/store";
 
 const Navbar = (): JSX.Element => {
-  const { setIsMenuOpen, sectionClassName, setScrollbarColor } = store();
+  const { isMenuOpen, setIsMenuOpen, sectionClassName, setScrollbarColor } =
+    store();
   const [iconSrc, setIconSrc] = useState<string>(LOGOS.default);
   const [isGray, setIsGray] = useState<boolean>(false);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  // const [isMenuOpen, setisMenuOpen] = useState<boolean>(false);
   const isTablet =
     typeof window !== "undefined" &&
     window.matchMedia("(min-width: 768px) and (max-width: 1024px)").matches;
@@ -21,11 +22,6 @@ const Navbar = (): JSX.Element => {
 
   useEffect(() => {
     const updateIconAndColor = () => {
-      setIsMenuOpen(isOpen);
-      if (isOpen) {
-        setIsGray(true);
-        return;
-      }
       let iconSrc = LOGOS.default;
       let isGray = false;
       switch (sectionClassName) {
@@ -53,7 +49,15 @@ const Navbar = (): JSX.Element => {
       setScrollbarColor(isGray ? "var(--home-gray)" : "#fff");
     };
     updateIconAndColor();
-  }, [sectionClassName, isOpen]);
+  }, [sectionClassName]);
+
+  const menuCloseButton = isMenuOpen
+    ? isGray
+      ? "bg-white"
+      : "home__bg-gray"
+    : isGray
+    ? "home__bg-gray"
+    : "bg-white";
 
   return (
     <nav className="fixed top-0 w-full bg-transparent text-white z-20">
@@ -93,22 +97,26 @@ const Navbar = (): JSX.Element => {
           </div>
           <div className="">
             <div
-              className={`hamburger ${isOpen ? "open" : ""}`}
-              onClick={() => setIsOpen(!isOpen)}
+              className={`hamburger ${isMenuOpen ? "open" : ""}`}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <span className={isGray ? "home__bg-gray" : "bg-white"}></span>
-              <span className={isGray ? "home__bg-gray" : "bg-white"}></span>
-              <span className={isGray ? "home__bg-gray" : "bg-white"}></span>
+              <span className={menuCloseButton}></span>
+              <span className={menuCloseButton}></span>
+              <span className={menuCloseButton}></span>
             </div>
           </div>
         </div>
       </div>
-      {isOpen && (
-        <div className="nav-menu fixed inset-y-0 right-0 bg-white text-black z-20 w-full px-5 pt-5 md:w-1/3 xl:w-1/5">
+      {isMenuOpen && (
+        <div
+          className={`nav-menu fixed inset-y-0 right-0 ${
+            isGray ? "home__bg-gray text-white" : "bg-white home__text-gray"
+          } z-20 w-full px-5 pt-5 md:w-1/3 xl:w-1/5`}
+        >
           <div className="flex justify-between items-center pr-4 py-4">
             <Link href="/" className="text-xl font-bold">
               <Image
-                src="/eon-studios-black.png"
+                src={isGray ? LOGOS.default : LOGOS.black}
                 width={100}
                 height={100}
                 alt="company-logo"
@@ -116,38 +124,74 @@ const Navbar = (): JSX.Element => {
               />
             </Link>
             <div
-              className={`hamburger ${isOpen ? "open" : ""}`}
-              onClick={() => setIsOpen(!isOpen)}
+              className={`hamburger ${isMenuOpen ? "open" : ""}`}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <span className={isGray ? "home__bg-gray" : "bg-white"}></span>
-              <span className={isGray ? "home__bg-gray" : "bg-white"}></span>
-              <span className={isGray ? "home__bg-gray" : "bg-white"}></span>
+              <span className={menuCloseButton}></span>
+              <span className={menuCloseButton}></span>
+              <span className={menuCloseButton}></span>
             </div>
           </div>
           <div className="flex flex-col mt-8 pl-2 md:pl-2 lg:pl-4">
             <Link
               href="/about"
-              className="block py-4 lg:py-6 text-2xl font-bold hover:bg-gray-100"
+              className="block py-4 lg:py-6 text-2xl"
+              onClick={() => setIsMenuOpen(false)}
             >
-              About
+              <div
+                className={`pb-1 border-b-2 border-transparent ${
+                  isGray
+                    ? "hover:border-b-2 hover:border-white"
+                    : "hover:border-b-2 hover:border-black"
+                } `}
+              >
+                About
+              </div>
             </Link>
             <Link
               href="/case-study"
-              className="block py-4 lg:py-6 text-2xl font-bold hover:bg-gray-100"
+              className="block py-4 lg:py-6 text-2xl"
+              onClick={() => setIsMenuOpen(false)}
             >
-              Case Study
+              <div
+                className={`pb-1 border-b-2 border-transparent ${
+                  isGray
+                    ? "hover:border-b-2 hover:border-white"
+                    : "hover:border-b-2 hover:border-black"
+                } `}
+              >
+                Case Study
+              </div>
             </Link>
             <Link
               href="/blog"
-              className="block py-4 lg:py-6 text-2xl font-bold hover:bg-gray-100"
+              className="block py-4 lg:py-6 text-2xl"
+              onClick={() => setIsMenuOpen(false)}
             >
-              Blog
+              <div
+                className={`pb-1 border-b-2 border-transparent ${
+                  isGray
+                    ? "hover:border-b-2 hover:border-white"
+                    : "hover:border-b-2 hover:border-black"
+                } `}
+              >
+                Blog
+              </div>
             </Link>
             <Link
               href="/contact"
-              className="block py-4 lg:py-6 text-2xl font-bold hover:bg-gray-100"
+              className="block py-4 lg:py-6 text-2xl"
+              onClick={() => setIsMenuOpen(false)}
             >
-              Contact Us
+              <div
+                className={`pb-1 border-b-2 border-transparent ${
+                  isGray
+                    ? "hover:border-b-2 hover:border-white"
+                    : "hover:border-b-2 hover:border-black"
+                } `}
+              >
+                Contact Us
+              </div>
             </Link>
           </div>
         </div>

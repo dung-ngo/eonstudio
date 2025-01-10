@@ -1,7 +1,7 @@
 .home-container {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .vertical-scroll {
@@ -19,12 +19,4 @@ section {
 .section--works .main-content .button:hover,
 .section--careers .main-content .button:hover {
   background-color: #000;
-}
-
-.nav-menu.open {
-  width: 100vw;
-  height: 100vh;
-  background-color: #fff;
-  opacity: 0.8;
-  cursor: pointer;
 }

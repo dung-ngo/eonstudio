@@ -1,35 +1,36 @@
-import React from "react";
-import { CONTENT } from "@/app/utils/constants";
+import React, { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ContactsSectionProps } from "@/types/interfaces";
 
-export const ContactsMobileSection = () => {
+export const ContactsMobileSection: FC<ContactsSectionProps> = (
+  props: ContactsSectionProps
+) => {
+  const { mainContent } = props;
   return (
     <section
       id="contact-us"
-      className="block md:hidden section__contacts home__bg-gray text-white"
+      className="block mobile-only relative md:hidden section__contacts home__bg-gray text-white"
     >
       <div className="h-screen px-6 pt-32">
-        <div className="mb-2 text-lg font-bold">
-          {CONTENT.contacts.response}
-        </div>
+        <div className="mb-2 text-lg font-bold">{mainContent.response}</div>
         <div className="mb-10">
           <Link href="/" className="text-sm font-semibold">
-            {CONTENT.contacts.email}
+            {mainContent.email}
           </Link>
         </div>
 
         <ul>
           <li className="text-lg font-bold mb-10">
-            <div>{CONTENT.contacts.place}</div>
+            <div>{mainContent.place}</div>
             <div className="text-sm home__text-gray-82">
-              <Link href={`tel: ${CONTENT.contacts.phone}`}>
-                {CONTENT.contacts.phone}
+              <Link href={`tel: ${mainContent.phone}`}>
+                {mainContent.phone}
               </Link>
             </div>
           </li>
           <li className="text-sm home__text-gray-82">
-            <Link href="">{CONTENT.contacts.privacy}</Link>
+            <Link href="">{mainContent.privacy}</Link>
           </li>
         </ul>
         <ul className="absolute bottom-5 mb-20">
@@ -56,10 +57,10 @@ export const ContactsMobileSection = () => {
             <div className="mt-1">
               <Link href="/">
                 <div className="text-lg font-extrabold">
-                  {CONTENT.contacts.manager1.name}
+                  {mainContent.manager1.name}
                 </div>
                 <div className="text-sm font-bold">
-                  {CONTENT.contacts.manager1.title}
+                  {mainContent.manager1.title}
                 </div>
               </Link>
             </div>
@@ -87,10 +88,10 @@ export const ContactsMobileSection = () => {
             <div className="mt-1">
               <Link href="/">
                 <div className="text-lg font-extrabold">
-                  {CONTENT.contacts.manager2.name}
+                  {mainContent.manager2.name}
                 </div>
                 <div className="text-sm font-bold">
-                  {CONTENT.contacts.manager2.title}
+                  {mainContent.manager2.title}
                 </div>
               </Link>
             </div>

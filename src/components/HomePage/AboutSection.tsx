@@ -12,13 +12,14 @@ interface AboutSectionProps {
       text: string;
     };
   };
-  buttonHref: string;
+  buttonHref?: string;
   imgSrc: string;
+  imgWidth: number;
   imgAlt: string;
 }
 
 export const AboutSection = (props: AboutSectionProps) => {
-  const { mainContent, buttonHref, imgSrc, imgAlt } = props;
+  const { mainContent, buttonHref, imgSrc, imgAlt, imgWidth } = props;
 
   return (
     <>
@@ -31,29 +32,29 @@ export const AboutSection = (props: AboutSectionProps) => {
                 dangerouslySetInnerHTML={{
                   __html: mainContent.desktop.title,
                 }}
-                className="text-5xl font-bold mb-5"
+                className="text-5xl font-extrabold leading-normal"
               ></h1>
               <p
                 dangerouslySetInnerHTML={{
                   __html: mainContent.desktop.text,
                 }}
-                className="mb-8 text-lg home__text-gray-82 font-semibold"
+                className="mb-8 mt-5 text-lg home__text-gray-82 font-semibold"
               ></p>
               {buttonHref && (
-                <div className="button border home__border-gray rounded-sm cursor-pointer z-10 flex items-center justify-center w-60 h-14">
-                  <Link href="/about" className="text-xl">
+                <Link href={buttonHref} className="text-xl">
+                  <div className="button border home__border-gray rounded-sm cursor-pointer z-10 flex items-center justify-center w-60 h-14">
                     {mainContent.button}
-                  </Link>
-                </div>
+                  </div>
+                </Link>
               )}
             </div>
             <div className="w-1/2 home__bg-gray flex items-center justify-center">
               <Image
                 src={imgSrc}
-                width={300}
+                width={imgWidth}
                 height={300}
                 alt={imgAlt}
-                className="h-72 w-72"
+                className="h-72 w-72 xl:h-auto xl:w-auto"
               />
             </div>
           </div>
@@ -88,13 +89,18 @@ export const AboutSection = (props: AboutSectionProps) => {
                   className="text-md md:text-xl lg:text-3xl"
                 ></p>
               </div>
-              <div className="flex justify-center">
-                <div className="button flex justify-center items-center border border-white rounded-sm z-10 w-44 h-12 md:w-72 md:h-16 lg:w-96 lg:h-24">
-                  <Link href={buttonHref} className="text-lg md:text-2xl lg:text-3xl">
-                    {mainContent.button}
+              {buttonHref && (
+                <div className="flex justify-center">
+                  <Link
+                    href={buttonHref}
+                    className="text-lg md:text-2xl lg:text-3xl"
+                  >
+                    <div className="button flex justify-center items-center border border-white rounded-sm z-10 w-44 h-12 md:w-72 md:h-16 lg:w-96 lg:h-24">
+                      {mainContent.button}
+                    </div>
                   </Link>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>

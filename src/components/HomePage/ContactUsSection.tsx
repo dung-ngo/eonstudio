@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import "@/styles/components/ContactUsSection.css";
 import { CONTENT } from "@/app/utils/constants";
@@ -7,7 +9,10 @@ import Link from "next/link";
 export const ContactUsSection = () => {
   const handleSubmit = () => {};
   return (
-    <section id="contact-us" className="section__form-contact h-screen bg-white text-black">
+    <section
+      id="contact-us"
+      className="section__form-contact h-screen bg-white text-black"
+    >
       {/* DESKTOP SCREEN */}
       <div className="hidden md:block">
         <div className="flex">
@@ -51,7 +56,10 @@ export const ContactUsSection = () => {
                     />
                   </div>
                   <div className="form-group mt-3 md:mt-10 lg:mt-10">
-                    <label htmlFor="work" className="home__font-rader font-bold block text-xl">
+                    <label
+                      htmlFor="work"
+                      className="home__font-rader font-bold block text-xl"
+                    >
                       I work at
                     </label>
                     <input
@@ -110,24 +118,24 @@ export const ContactUsSection = () => {
           <div className="w-1/4 text-white md:w-2/6">
             <div className="h-screen relative bg-black pl-10 pr-5 pt-40">
               <div className="mb-2 text-lg font-bold">
-                {CONTENT.contacts.response}
+                {CONTENT.HOME_PAGE.contacts.response}
               </div>
               <div className="mb-10">
                 <Link href="/" className="text-sm font-semibold">
-                  {CONTENT.contacts.email}
+                  {CONTENT.HOME_PAGE.contacts.email}
                 </Link>
               </div>
               <ul>
                 <li className="text-lg font-bold mb-10">
-                  <div className="mb-3">{CONTENT.contacts.place}</div>
+                  <div className="mb-3">{CONTENT.HOME_PAGE.contacts.place}</div>
                   <div className="text-sm text-gray-500">
-                    <Link href={`tel:${CONTENT.contacts.phone}`}>
-                      {CONTENT.contacts.phone}
+                    <Link href={`tel:${CONTENT.HOME_PAGE.contacts.phone}`}>
+                      {CONTENT.HOME_PAGE.contacts.phone}
                     </Link>
                   </div>
                 </li>
                 <li className="text-sm font-bold text-gray-500">
-                  <Link href="">{CONTENT.contacts.privacy}</Link>
+                  <Link href="">{CONTENT.HOME_PAGE.contacts.privacy}</Link>
                 </li>
               </ul>
               <ul className="absolute bottom-0 mb-20">
@@ -154,10 +162,10 @@ export const ContactUsSection = () => {
                   <div className="mt-1">
                     <Link href="/">
                       <div className="text-lg text-white font-extrabold">
-                        {CONTENT.contacts.manager1.name}
+                        {CONTENT.HOME_PAGE.contacts.manager1.name}
                       </div>
                       <div className="text-sm font-bold">
-                        {CONTENT.contacts.manager1.title}
+                        {CONTENT.HOME_PAGE.contacts.manager1.title}
                       </div>
                     </Link>
                   </div>
@@ -185,10 +193,10 @@ export const ContactUsSection = () => {
                   <div className="mt-1">
                     <Link href="/">
                       <div className="text-lg font-extrabold">
-                        {CONTENT.contacts.manager2.name}
+                        {CONTENT.HOME_PAGE.contacts.manager2.name}
                       </div>
                       <div className="text-sm font-bold">
-                        {CONTENT.contacts.manager2.title}
+                        {CONTENT.HOME_PAGE.contacts.manager2.title}
                       </div>
                     </Link>
                   </div>

@@ -44,3 +44,11 @@ body {
 section {
   scroll-snap-align: start;
 }
+
+.nav-menu.open {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  opacity: 0.5;
+  cursor: pointer;
+}
