@@ -135,63 +135,31 @@ const Navbar = (): JSX.Element => {
           <div className="flex flex-col mt-8 pl-2 md:pl-2 lg:pl-4">
             <Link
               href="/about"
-              className="block py-4 lg:py-6 text-2xl"
+              className="block py-2 lg:py-3 text-2xl"
               onClick={() => setIsMenuOpen(false)}
             >
-              <div
-                className={`pb-1 border-b-2 border-transparent ${
-                  isGray
-                    ? "hover:border-b-2 hover:border-white"
-                    : "hover:border-b-2 hover:border-black"
-                } `}
-              >
-                About
-              </div>
+              <div className="menu-item">About</div>
             </Link>
             <Link
               href="/case-study"
-              className="block py-4 lg:py-6 text-2xl"
+              className="block py-2 lg:py-3 text-2xl"
               onClick={() => setIsMenuOpen(false)}
             >
-              <div
-                className={`pb-1 border-b-2 border-transparent ${
-                  isGray
-                    ? "hover:border-b-2 hover:border-white"
-                    : "hover:border-b-2 hover:border-black"
-                } `}
-              >
-                Case Study
-              </div>
+              <div className="menu-item">Case Study</div>
             </Link>
             <Link
               href="/blog"
-              className="block py-4 lg:py-6 text-2xl"
+              className="block py-2 lg:py-3 text-2xl"
               onClick={() => setIsMenuOpen(false)}
             >
-              <div
-                className={`pb-1 border-b-2 border-transparent ${
-                  isGray
-                    ? "hover:border-b-2 hover:border-white"
-                    : "hover:border-b-2 hover:border-black"
-                } `}
-              >
-                Blog
-              </div>
+              <div className="menu-item">Blog</div>
             </Link>
             <Link
               href="/contact"
-              className="block py-4 lg:py-6 text-2xl"
+              className="block py-2 lg:py-3 text-2xl"
               onClick={() => setIsMenuOpen(false)}
             >
-              <div
-                className={`pb-1 border-b-2 border-transparent ${
-                  isGray
-                    ? "hover:border-b-2 hover:border-white"
-                    : "hover:border-b-2 hover:border-black"
-                } `}
-              >
-                Contact Us
-              </div>
+              <div className="menu-item">Contact Us</div>
             </Link>
           </div>
         </div>

@@ -1,13 +1,20 @@
 @font-face {
   font-family: "PPRader";
-  src: url("@/assets/fonts/PPRader.otf") format("opentype");
+  src: url("/fonts/PPRader.otf") format("opentype");
   font-weight: 100 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: "PPNeueMontreal";
-  src: url("@/assets/fonts/PPNeueMontreal-book.otf") format("opentype");
+  src: url("/fonts/PPNeueMontreal-book.otf") format("opentype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PPNeueMontrealBold";
+  src: url("/fonts/PPNeueMontreal-bold.otf") format("opentype");
   font-weight: 100 900;
   font-style: normal;
 }

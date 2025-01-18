@@ -5,7 +5,7 @@ import { getSectionClassname } from "@/app/utils/helpers";
 import { store } from "@/store";
 
 const useSectionObserve = () => {
-  const { setIsIntroSection, sectionClassName, setSectionClassName } = store();
+  const { setIsIntroSection, setSectionClassName } = store();
   const lastLoggedSection = useRef<string | null>(null);
 
   useEffect(() => {

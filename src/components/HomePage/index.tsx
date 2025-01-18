@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useEffect, useRef, useState } from "react";
+import { FC } from "react";
 import "@/styles/components/HomePage.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -81,7 +81,7 @@ export const HomePage: FC = () => {
           <CaseStudySection
             mainContent={CONTENT.HOME_PAGE.casestudy}
             buttonHref="/case-study"
-            imgSrc="/case-study.jpg"
+            imgSrc="/case-study.png"
             imgAlt="case-study"
             imgClass="w-full h-full"
           />
