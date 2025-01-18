@@ -12,6 +12,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "PPNeueMontrealBold";
+  src: url("/fonts/PPNeueMontreal-bold.otf") format("opentype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
 body {
   font-family: "PPNeueMontreal";
 }

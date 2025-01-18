@@ -41,7 +41,7 @@ export const AboutPage = () => {
           <CaseStudySection
             mainContent={CONTENT.ABOUT_PAGE.casestudy}
             buttonHref="/case-study"
-            imgSrc="/case-study.jpg"
+            imgSrc="/case-study.png"
             imgAlt="case-study"
             imgClass="w-full h-full"
           />

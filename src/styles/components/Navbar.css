@@ -45,3 +45,7 @@
   top: 10px;
   transform: rotate(-135deg);
 }
+
+.nav-menu .menu-item:hover {
+  font-family: "PPNeueMontrealBold";
+}
