@@ -9,9 +9,7 @@ import { ContactsMobileSection } from "@/components/HomePage/ContactsMobileSecti
 import { ContactUsSection } from "@/components/HomePage/ContactUsSection";
 import { CONTENT } from "@/app/utils/constants";
 import { IntroSection } from "@/components/HomePage/IntroSection";
-import { ExperiencesSection } from "./ExperiencesSection";
 import { AboutSection } from "./AboutSection";
-import { CaseStudySection } from "@/components/HomePage/CaseStudySection";
 import useSmoothScroll from "@/hooks/useSmoothScroll";
 import { store } from "@/store";
 import useSectionObserve from "@/hooks/useSectionObserve";

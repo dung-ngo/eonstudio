@@ -2,9 +2,6 @@
 
 import React from "react";
 import { IntroSection } from "@/components/HomePage/IntroSection";
-import { AboutSection } from "@/components/HomePage/AboutSection";
-import { ExperiencesSection } from "@/components/HomePage/ExperiencesSection";
-import { CaseStudySection } from "@/components/HomePage/CaseStudySection";
 import { ContactUsSection } from "@/components/HomePage/ContactUsSection";
 import { ContactsMobileSection } from "@/components/HomePage/ContactsMobileSection";
 import { CONTENT } from "@/app/utils/constants";

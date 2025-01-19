@@ -4,23 +4,6 @@ import { CONTENT } from "@/app/utils/constants";
 import Link from "next/link";
 import Image from "next/image";
 
-interface BlogSectionProps {
-  title: string;
-  text: string;
-  viewAll: string;
-  newsTitle1: string;
-  newsBrief1: string;
-  newsTitle2: string;
-  newsBrief2: string;
-  newsTitle3: string;
-  newsBrief3: string;
-  desktop: {
-    text: string;
-    newsTitle1: string;
-    newsTitle3: string;
-  };
-}
-
 export const BlogSection = () => {
   return (
     <section className="section__blog h-screen home__bg-gray xl:bg-white px-5 md:px-6">
