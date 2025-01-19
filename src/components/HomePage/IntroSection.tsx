@@ -8,10 +8,8 @@ import Image from "next/image";
 interface IntroSectionProps {
   content?: {
     button: string;
-    desktop: {
-      title: string;
-      text: string;
-    };
+    title: string;
+    text: string;
   };
   buttonHref: string;
   videoSrc?: string;
@@ -34,23 +32,19 @@ export const IntroSection = (props: IntroSectionProps) => {
     <section className="relative section__intro first text-white h-screen">
       {content ? (
         <div className="main-content absolute bottom-24 md:bottom-16 z-10 px-5 w-full md:pl-12 md:pr-12 lg:pl-14 lg:pr-16 lg:bottom-20 xl:pl-24 xl:pr-24 xl:bottom-20">
-          <h1
-            dangerouslySetInnerHTML={{
-              __html: content.desktop.title,
-            }}
-            className="text-3xl md:text-5xl font-bold mb-5 xl:mb-8"
-          ></h1>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: content.desktop.text,
-            }}
-            className="hidden md:block mb-8 text-lg font-semibold"
-          ></p>
+          <div className="w-11/12 md:w-3/5 xl:w-1/4">
+            <h1 className="text-3xl font-bold mb-5 leading-normal md:text-5xl xl:mb-8">
+              {content.title}
+            </h1>
+            <p className="hidden md:block mb-8 text-lg font-semibold">
+              {content.text}
+            </p>
+          </div>
           <div className="flex justify-between w-full">
             <div className="button flex items-center justify-center border rounded-sm border-white cursor-pointer w-44 h-12 md:w-72 md:h-16 lg:w-96 lg:h-24 xl:w-60 xl:h-14">
               <Link
                 href={buttonHref}
-                className="text-lg font-medium lg:text-xl"
+                className="text-lg font-medium md:text-2xl lg:text-3xl xl:text-2xl"
               >
                 {content.button}
               </Link>

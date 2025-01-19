@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ContactsSectionProps } from "@/types/interfaces";
+import { CONTENT, SOCIALS_ICONS } from "@/app/utils/constants";
 
 export const ContactsMobileSection: FC<ContactsSectionProps> = (
   props: ContactsSectionProps
@@ -15,88 +16,36 @@ export const ContactsMobileSection: FC<ContactsSectionProps> = (
       <div className="h-screen px-6 pt-32">
         <div className="mb-2 text-lg font-bold">{mainContent.response}</div>
         <div className="mb-10">
-          <Link href="/" className="text-sm font-semibold">
+          <Link href="/" className="pp-rader">
             {mainContent.email}
           </Link>
         </div>
 
         <ul>
-          <li className="text-lg font-bold mb-10">
+          <li className="text-lg mb-5">
             <div>{mainContent.place}</div>
-            <div className="text-sm home__text-gray-82">
+            <div className="text-lg pp-rader mt-3">
               <Link href={`tel: ${mainContent.phone}`}>
                 {mainContent.phone}
               </Link>
             </div>
           </li>
-          <li className="text-sm home__text-gray-82">
+          <li className="text-lg">
             <Link href="">{mainContent.privacy}</Link>
           </li>
         </ul>
-        <ul className="absolute bottom-5 mb-20">
-          <li className="flex mb-8">
-            <Link href="/" className="mr-8">
-              <div className="relative">
-                <Image
-                  src="/sam.png"
-                  width={50}
-                  height={50}
-                  alt="manager-1"
-                  className="rounded-full"
-                />
-                <span className="absolute bottom-0 right-0">
-                  <Image
-                    src="/linkedin.png"
-                    width={20}
-                    height={20}
-                    alt="LinkedIn"
-                  />
-                </span>
+        <div className="mt-16">
+          <div>{CONTENT.HOME_PAGE.contacts.socials}</div>
+          <div className="flex space-x-5 mt-5">
+            {SOCIALS_ICONS.map((icon, index) => (
+              <div key={index} className="cursor-pointer">
+                <Link href={icon.href}>
+                  <Image src={icon.src} width={25} height={25} alt={icon.alt} />
+                </Link>
               </div>
-            </Link>
-            <div className="mt-1">
-              <Link href="/">
-                <div className="text-lg font-extrabold">
-                  {mainContent.manager1.name}
-                </div>
-                <div className="text-sm font-bold">
-                  {mainContent.manager1.title}
-                </div>
-              </Link>
-            </div>
-          </li>
-          <li className="flex">
-            <Link href="/" className="mr-6">
-              <div className="relative">
-                <Image
-                  src="/june.png"
-                  width={50}
-                  height={50}
-                  alt="manager-2"
-                  className="rounded-full"
-                />
-                <span className="absolute bottom-0 right-0">
-                  <Image
-                    src="/linkedin.png"
-                    width={20}
-                    height={20}
-                    alt="LinkedIn"
-                  />
-                </span>
-              </div>
-            </Link>
-            <div className="mt-1">
-              <Link href="/">
-                <div className="text-lg font-extrabold">
-                  {mainContent.manager2.name}
-                </div>
-                <div className="text-sm font-bold">
-                  {mainContent.manager2.title}
-                </div>
-              </Link>
-            </div>
-          </li>
-        </ul>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

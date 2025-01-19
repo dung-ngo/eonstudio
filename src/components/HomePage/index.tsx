@@ -15,6 +15,7 @@ import { CaseStudySection } from "@/components/HomePage/CaseStudySection";
 import useSmoothScroll from "@/hooks/useSmoothScroll";
 import { store } from "@/store";
 import useSectionObserve from "@/hooks/useSectionObserve";
+import { SplitSection } from "../commons/SplitSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,7 +62,7 @@ export const HomePage: FC = () => {
         <div className={`nav-menu ${isMenuOpen ? "open" : ""}`}>
           <IntroSection
             content={CONTENT.HOME_PAGE.intro}
-            buttonHref="#contact-us"
+            buttonHref="contact-us"
             isIntroSection={isIntroSection}
             // videoSrc="intro-video.mp4"
           />
@@ -72,18 +73,31 @@ export const HomePage: FC = () => {
             imgWidth={300}
             imgAlt="eon-studios"
           />
-          <ExperiencesSection
-            mainContent={CONTENT.HOME_PAGE.experiences}
+          <SplitSection
+            mainContent={CONTENT.HOME_PAGE.services}
+            sectionName="section__services split-section"
             buttonHref="/services"
-            imgSrc="/experiences.jpg"
-            imgAlt="experiences"
+            imageProps={{
+              src: `${CONTENT.HOME_PAGE.services.imgSrc}`,
+              alt: "services",
+              width: 500,
+              height: 500,
+              className: "h-full w-full object-cover object-center",
+              position: "left",
+            }}
           />
-          <CaseStudySection
+          <SplitSection
             mainContent={CONTENT.HOME_PAGE.casestudy}
-            buttonHref="/case-study"
-            imgSrc="/case-study.png"
-            imgAlt="case-study"
-            imgClass="w-full h-full"
+            sectionName="section__case-study split-section"
+            buttonHref="/casestudy"
+            imageProps={{
+              src: `${CONTENT.HOME_PAGE.casestudy.imgSrc}`,
+              alt: "case-study",
+              width: 500,
+              height: 500,
+              className: "h-full w-full object-cover object-center",
+              position: "right",
+            }}
           />
           <BlogSection />
           <ContactUsSection />

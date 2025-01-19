@@ -28,7 +28,7 @@ const Navbar = (): JSX.Element => {
         case "section__about-us":
           iconSrc = isDesktop ? LOGOS.black : LOGOS.default;
           break;
-        case "section__experiences":
+        case "section__services":
         case "section__case-study":
           iconSrc = LOGOS.black;
           isGray = true;

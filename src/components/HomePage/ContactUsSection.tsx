@@ -2,7 +2,7 @@
 
 import React from "react";
 import "@/styles/components/ContactUsSection.css";
-import { CONTENT } from "@/app/utils/constants";
+import { CONTENT, SOCIALS_ICONS } from "@/app/utils/constants";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -117,91 +117,46 @@ export const ContactUsSection = () => {
           </div>
           <div className="w-1/4 text-white md:w-2/6">
             <div className="h-screen relative bg-black pl-10 pr-5 pt-40">
-              <div className="mb-2 text-lg font-bold">
-                {CONTENT.HOME_PAGE.contacts.response}
+              <div>
+                <div className="mb-2 text-lg font-bold">
+                  {CONTENT.HOME_PAGE.contacts.response}
+                </div>
+                <div className="mb-10">
+                  <Link href="/" className="text-lg pp-rader">
+                    {CONTENT.HOME_PAGE.contacts.email}
+                  </Link>
+                </div>
               </div>
-              <div className="mb-10">
-                <Link href="/" className="text-sm font-semibold">
-                  {CONTENT.HOME_PAGE.contacts.email}
-                </Link>
-              </div>
-              <ul>
-                <li className="text-lg font-bold mb-10">
+              <div>
+                <div className="text-lg font-bold mb-5">
                   <div className="mb-3">{CONTENT.HOME_PAGE.contacts.place}</div>
-                  <div className="text-sm text-gray-500">
+                  <div className="text-lg pp-rader">
                     <Link href={`tel:${CONTENT.HOME_PAGE.contacts.phone}`}>
                       {CONTENT.HOME_PAGE.contacts.phone}
                     </Link>
                   </div>
-                </li>
-                <li className="text-sm font-bold text-gray-500">
+                </div>
+                <div className="text-lg pp-rader">
                   <Link href="">{CONTENT.HOME_PAGE.contacts.privacy}</Link>
-                </li>
-              </ul>
-              <ul className="absolute bottom-0 mb-20">
-                <li className="flex mb-8">
-                  <Link href="/" className="mr-8">
-                    <div className="relative">
-                      <Image
-                        src="/sam.png"
-                        width={100}
-                        height={100}
-                        alt="manager-1"
-                        className="rounded-full w-14"
-                      />
-                      <span className="absolute bottom-0 right-0">
+                </div>
+              </div>
+              <div className="mt-10">
+                <div>{CONTENT.HOME_PAGE.contacts.socials}</div>
+                <div className="flex space-x-5 mt-5">
+                  {SOCIALS_ICONS.map((icon, index) => (
+                    <div key={index} className="cursor-pointer">
+                      <Link href={icon.href}>
                         <Image
-                          src="/linkedin.png"
-                          width={20}
-                          height={20}
-                          alt="LinkedIn"
+                          src={icon.src}
+                          width={30}
+                          height={30}
+                          alt={icon.alt}
                         />
-                      </span>
+                      </Link>
                     </div>
-                  </Link>
-                  <div className="mt-1">
-                    <Link href="/">
-                      <div className="text-lg text-white font-extrabold">
-                        {CONTENT.HOME_PAGE.contacts.manager1.name}
-                      </div>
-                      <div className="text-sm font-bold">
-                        {CONTENT.HOME_PAGE.contacts.manager1.title}
-                      </div>
-                    </Link>
-                  </div>
-                </li>
-                <li className="flex">
-                  <Link href="/" className="mr-6">
-                    <div className="relative">
-                      <Image
-                        src="/june.png"
-                        width={100}
-                        height={100}
-                        alt="manager-2"
-                        className="rounded-full w-14"
-                      />
-                      <span className="absolute bottom-0 right-0">
-                        <Image
-                          src="/linkedin.png"
-                          width={20}
-                          height={20}
-                          alt="LinkedIn"
-                        />
-                      </span>
-                    </div>
-                  </Link>
-                  <div className="mt-1">
-                    <Link href="/">
-                      <div className="text-lg font-extrabold">
-                        {CONTENT.HOME_PAGE.contacts.manager2.name}
-                      </div>
-                      <div className="text-sm font-bold">
-                        {CONTENT.HOME_PAGE.contacts.manager2.title}
-                      </div>
-                    </Link>
-                  </div>
-                </li>
-              </ul>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

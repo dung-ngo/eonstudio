@@ -12,46 +12,27 @@ export const CONTENT = {
   logoLabel: "EONSTUDIOS",
   HOME_PAGE: {
     intro: {
-      title: `Elevate Your Digital<br/>Presence with Us`,
-      text: `At our core, we are dedicated to transforming digital<br/>identities through innovative design and creative<br/>solutions. Our mission is to empower brands to<br/>leave a lasting impression in the digital landscape.`,
+      title: `Elevate Your Digital Presence with Us`,
+      text: `At our core, we are dedicated to transforming digital identities through innovative design and creative solutions. Our mission is to empower brands to leave a lasting impression in the digital landscape.`,
       button: "Let's Talk",
-      desktop: {
-        title: `Elevate Your Digital<br/>Presence with Us`,
-        text: `At our core, we are dedicated to transforming digital<br/>identities through innovative design and creative<br/>solutions. Our mission is to empower brands to<br/>leave a lasting impression in the digital landscape.`,
-      },
     },
     about: {
-      title: `Empowering People to<br/>Create Significant Impact`,
-      text: `We prioritize the needs of our users,<br/>recognizing that thoughtful design can<br/>transform lives. Our commitment to<br/>innovation and quality ensures we deliver<br/>exceptional results for our clients.`,
+      title: `Empowering People to Create Significant Impact`,
+      text: `We prioritize the needs of our users, recognizing that thoughtful design can transform lives. Our commitment to innovation and quality ensures we deliver exceptional results for our clients.`,
       button: "About Us",
-      desktop: {
-        title: `Empowering People to Create<br/> Significant Impact`,
-        text: `We prioritize the needs of our users, recognizing that thoughtful design can<br/>transform lives. Our commitment to innovation and quality ensures we deliver<br/>exceptional results for our clients.`,
-      },
+      imgSrc: "/eon-studios-white",
     },
-    experiences: {
-      title: `Crafting Exceptional Digital<br/>Experiences for You`,
-      text: `Our creative team specializes in transforming ideas into stunning visuals and<br/>functional websites. From captivating photoshoots to innovative web<br/>development or apps, we bring your vision to life.`,
+    services: {
+      title: `Crafting Exceptional Digital Experiences for You`,
+      text: `Our creative team specializes in transforming ideas into stunning visuals and functional websites. From captivating photoshoots to innovative web development or apps, we bring your vision to life.`,
       button: "View Services",
-      desktop: {
-        title: `Crafting Exceptional Digital<br/>Experiences for You`,
-        text: `Our creative team specializes in transforming ideas into stunning visuals and functional websites. From captivating photoshoots to innovative web development or apps, we bring your vision to life.`,
-        item1: "Innovative concepts tailored to your brand's unique identity.",
-        item2: "Dynamic imagery that engages and inspires your audience.",
-        item3: "Stunning visuals that captivate and engage your audience.",
-        item4:
-          "Web design that combines aesthetics with seamless functionality.",
-        item5: "Innovative app development tailored to your unique needs.",
-      },
+      imgSrc: "/home_page-services",
     },
     casestudy: {
       title: "Our Work Speaks Volumes",
       text: `Discover our array of successful projects and cutting-edge innovative solutions that have made a significant impact. We invite you to delve into the details of each initiative, showcasing our commitment to excellence and creativity in overcoming challenges.`,
+      imgSrc: "/home_page-casestudy",
       button: "View Case Studies",
-      desktop: {
-        title: "Our Work Speaks Volumes",
-        text: `Discover our array of successful projects and cutting-edge innovative solutions that have made a significant impact. We invite you to delve into the details of each initiative, showcasing our commitment to excellence and creativity in overcoming challenges.`,
-      },
     },
     blog: {
       title: "From our blog",
@@ -66,11 +47,6 @@ export const CONTENT = {
       newsTitle3: "Building a Strong Brand Identity",
       newsBrief3:
         "Learn how we crafted a compelling brand narrative for our client.",
-      desktop: {
-        text: `Explore our latest articles and updates in digital branding.`,
-        newsTitle1: "46 ideas for Elon Musk<br>and Tesla",
-        newsTitle3: "Join us from your<br>country",
-      },
     },
     contacts: {
       response: "Prepare for a quick response",
@@ -78,43 +54,26 @@ export const CONTENT = {
       place: "Delaware",
       phone: "+1 212-941-5220",
       privacy: "Privacy Policy",
-      manager1: {
-        name: "Sam",
-        title: "Founder & CEO",
-      },
-      manager2: {
-        name: "June",
-        title: "Co-founder",
-      },
+      socials: "Socials",
     },
   },
   ABOUT_PAGE: {
     about: {
       title: "We're craftspeople. We design amazing digital products.",
       text: "Harnessing the power of comprehensive expertise and in-depth insights to shape and nurture global brands that transcend time, resonating with millions across diverse landscapes.",
-      button: "About Us",
-      desktop: {
-        title: "We're craftspeople. We design amazing digital products.",
-        text: "Harnessing the power of comprehensive expertise and in-depth insights to shape and nurture global brands that transcend time, resonating with millions across diverse landscapes.",
-      },
+      imgSrc: "/about_page-about",
     },
     services: {
       title: "The Art of Crafting Enduring Identities.",
       text: "Through meticulous strategy and creative execution, We forge enduring identities that not only capture your essence but also leave a lasting legacy, ensuring your brand's influence continues to thrive throughout the eons.",
+      imgSrc: "/about_page-services",
       button: "View Services",
-      desktop: {
-        title: "The Art of Crafting Enduring Identities.",
-        text: "Through meticulous strategy and creative execution, We forge enduring identities that not only capture your essence but also leave a lasting legacy, ensuring your brand's influence continues to thrive throughout the eons.",
-      },
     },
     casestudy: {
       title: "Our Work Speaks Volumes",
       text: `Discover our array of successful projects and cutting-edge innovative solutions that have made a significant impact. We invite you to delve into the details of each initiative, showcasing our commitment to excellence and creativity in overcoming challenges.`,
+      imgSrc: "/home_page-casestudy",
       button: "View Case Studies",
-      desktop: {
-        title: "Our Work Speaks Volumes",
-        text: `Discover our array of successful projects and cutting-edge innovative solutions that have made a significant impact. We invite you to delve into the details of each initiative, showcasing our commitment to excellence and creativity in overcoming challenges.`,
-      },
     },
     contacts: {
       response: "Prepare for a quick response",
@@ -122,16 +81,16 @@ export const CONTENT = {
       place: "Delaware",
       phone: "+1 212-941-5220",
       privacy: "Privacy Policy",
-      manager1: {
-        name: "Sam",
-        title: "Founder & CEO",
-      },
-      manager2: {
-        name: "June",
-        title: "Co-founder",
-      },
     },
   },
 };
 
 export const SESSION_COUNT = 6;
+
+export const SOCIALS_ICONS = [
+  { src: "/icons/facebook.svg", href: "/", alt: "facebook-icon" },
+  { src: "/icons/instagram.svg", href: "/", alt: "instagram-icon" },
+  { src: "/icons/x.svg", href: "/", alt: "x-icon" },
+  { src: "/icons/youtube.svg", href: "/", alt: "youtube-icon" },
+  { src: "/icons/bluesky.svg", href: "/", alt: "bluesky-icon" },
+];

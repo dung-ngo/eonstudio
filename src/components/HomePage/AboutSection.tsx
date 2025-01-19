@@ -7,10 +7,6 @@ interface AboutSectionProps {
     title: string;
     text: string;
     button?: string;
-    desktop: {
-      title: string;
-      text: string;
-    };
   };
   buttonHref?: string;
   imgSrc: string;
@@ -28,18 +24,15 @@ export const AboutSection = (props: AboutSectionProps) => {
         <div className="hidden xl:block">
           <div className="flex h-screen">
             <div className="w-1/2 text-black pl-24 pr-24 pt-80">
-              <h1
-                dangerouslySetInnerHTML={{
-                  __html: mainContent.desktop.title,
-                }}
-                className="text-5xl font-extrabold leading-normal"
-              ></h1>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: mainContent.desktop.text,
-                }}
-                className="mb-8 mt-5 text-lg home__text-gray-82 font-semibold"
-              ></p>
+              <div className="w-5/6">
+                <h1 className="text-5xl font-extrabold leading-normal">
+                  {mainContent.title}
+                </h1>
+                <p className="mb-8 mt-5 text-lg home__text-gray-82 font-semibold">
+                  {mainContent.text}
+                </p>
+              </div>
+
               {buttonHref && (
                 <Link href={buttonHref} className="text-xl">
                   <div className="button border home__border-gray rounded-sm cursor-pointer z-10 flex items-center justify-center w-60 h-14">
@@ -68,26 +61,20 @@ export const AboutSection = (props: AboutSectionProps) => {
                 src={imgSrc}
                 width={500}
                 height={500}
-                className="w-24 h-24 md:w-60 md:h-60 lg:w-80 lg:h-80"
+                className="w-40 h-40 md:w-60 md:h-60 lg:w-80 lg:h-80"
                 alt={imgAlt}
               />
             </div>
-            <div className="main-content mx-10 text-center">
-              <div className="mt-14 px-5 md:my-10">
-                <h1
-                  dangerouslySetInnerHTML={{
-                    __html: mainContent.title,
-                  }}
-                  className="text-2xl font-bold md:text-4xl lg:text-5xl"
-                ></h1>
+            <div className="main-content mx-10 md:mx-44 lg:mx-60 text-center">
+              <div className="mt-10 px-5 md:my-10">
+                <h1 className="text-2xl font-bold md:text-4xl lg:text-5xl">
+                  {mainContent.title}
+                </h1>
               </div>
               <div className="mt-5 mb-8 md:mb-20">
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: mainContent.text,
-                  }}
-                  className="text-md md:text-xl lg:text-3xl"
-                ></p>
+                <p className="text-md md:text-xl lg:text-3xl">
+                  {mainContent.text}
+                </p>
               </div>
               {buttonHref && (
                 <div className="flex justify-center">

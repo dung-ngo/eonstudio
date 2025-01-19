@@ -11,6 +11,7 @@ import { CONTENT } from "@/app/utils/constants";
 import useSmoothScroll from "@/hooks/useSmoothScroll";
 import useSectionObserve from "@/hooks/useSectionObserve";
 import { store } from "@/store";
+import { SplitSection } from "../commons/SplitSection";
 
 export const AboutPage = () => {
   useSmoothScroll();
@@ -26,24 +27,43 @@ export const AboutPage = () => {
             isIntroSection={isIntroSection}
             videoSrc="intro-video.mp4"
           />
-          <AboutSection
+          <SplitSection
             mainContent={CONTENT.ABOUT_PAGE.about}
-            imgSrc="/about_page-about.png"
-            imgWidth={900}
-            imgAlt="eon-studios"
+            sectionName="section__about split-section"
+            imageProps={{
+              src: `${CONTENT.ABOUT_PAGE.about.imgSrc}`,
+              alt: "about-us",
+              width: 500,
+              height: 500,
+              className: "h-full w-full object-cover object-center",
+              position: "right",
+            }}
           />
-          <ExperiencesSection
+          <SplitSection
             mainContent={CONTENT.ABOUT_PAGE.services}
+            sectionName="section__services split-section"
             buttonHref="/services"
-            imgSrc="/about_page-services.png"
-            imgAlt="experiences"
+            imageProps={{
+              src: `${CONTENT.ABOUT_PAGE.services.imgSrc}`,
+              alt: "services",
+              width: 500,
+              height: 500,
+              className: "h-full w-full object-cover object-center",
+              position: "left",
+            }}
           />
-          <CaseStudySection
+          <SplitSection
             mainContent={CONTENT.ABOUT_PAGE.casestudy}
-            buttonHref="/case-study"
-            imgSrc="/case-study.png"
-            imgAlt="case-study"
-            imgClass="w-full h-full"
+            sectionName="section__casestudy split-section"
+            buttonHref="/services"
+            imageProps={{
+              src: `${CONTENT.ABOUT_PAGE.casestudy.imgSrc}`,
+              alt: "case-study",
+              width: 500,
+              height: 500,
+              className: "h-full w-full object-cover object-center",
+              position: "right",
+            }}
           />
           <ContactUsSection />
           <ContactsMobileSection mainContent={CONTENT.ABOUT_PAGE.contacts} />

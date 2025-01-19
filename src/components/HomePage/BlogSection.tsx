@@ -27,18 +27,12 @@ export const BlogSection = () => {
       {/* DESKTOP SCREEN */}
       <div className="hidden xl:block text-black pt-24 mb-10">
         <div className="blog-top text-center">
-          <h1
-            dangerouslySetInnerHTML={{
-              __html: CONTENT.HOME_PAGE.blog.title,
-            }}
-            className="text-black text-6xl font-bold"
-          ></h1>
-          <p
-            className="text-slate-400 text-md font-bold"
-            dangerouslySetInnerHTML={{
-              __html: CONTENT.HOME_PAGE.blog.desktop.text,
-            }}
-          ></p>
+          <h1 className="text-black text-6xl font-bold">
+            {CONTENT.HOME_PAGE.blog.title}
+          </h1>
+          <p className="text-slate-400 text-md font-bold">
+            {CONTENT.HOME_PAGE.blog.text}
+          </p>
           <div className="link flex justify-center pt-5">
             <Link href="/blog" className=" text-black text-md font-bold flex">
               <div>{CONTENT.HOME_PAGE.blog.viewAll}</div>
@@ -61,18 +55,10 @@ export const BlogSection = () => {
               alt="image1"
               className="w-full h-2/4"
             />
-            <h1
-              dangerouslySetInnerHTML={{
-                __html: CONTENT.HOME_PAGE.blog.desktop.newsTitle1,
-              }}
-              className="text-3xl font-bold my-3"
-            ></h1>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: CONTENT.HOME_PAGE.blog.newsBrief1,
-              }}
-              className="font-semibold"
-            ></p>
+            <h1 className="text-3xl font-bold my-3">
+              {CONTENT.HOME_PAGE.blog.newsTitle1}
+            </h1>
+            <p className="font-semibold">{CONTENT.HOME_PAGE.blog.newsBrief1}</p>
           </div>
           <div className="flex flex-col w-1/3 px-5">
             <Image
@@ -82,18 +68,10 @@ export const BlogSection = () => {
               alt="image2"
               className="w-full h-2/4"
             />
-            <h1
-              dangerouslySetInnerHTML={{
-                __html: CONTENT.HOME_PAGE.blog.newsTitle2,
-              }}
-              className="text-3xl font-bold my-3"
-            ></h1>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: CONTENT.HOME_PAGE.blog.newsBrief2,
-              }}
-              className="font-semibold"
-            ></p>
+            <h1 className="text-3xl font-bold my-3">
+              {CONTENT.HOME_PAGE.blog.newsTitle2}
+            </h1>
+            <p className="font-semibold">{CONTENT.HOME_PAGE.blog.newsBrief2}</p>
           </div>
           <div className="flex flex-col w-1/3 pl-5">
             <Image
@@ -103,36 +81,22 @@ export const BlogSection = () => {
               alt="image3"
               className="w-full h-2/4"
             />
-            <h1
-              dangerouslySetInnerHTML={{
-                __html: CONTENT.HOME_PAGE.blog.desktop.newsTitle3,
-              }}
-              className="text-3xl font-bold my-3"
-            ></h1>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: CONTENT.HOME_PAGE.blog.newsBrief3,
-              }}
-              className="font-semibold"
-            ></p>
+            <h1 className="text-3xl font-bold my-3">
+              {CONTENT.HOME_PAGE.blog.newsTitle3}
+            </h1>
+            <p className="font-semibold">{CONTENT.HOME_PAGE.blog.newsBrief3}</p>
           </div>
         </div>
       </div>
 
       {/* MOBILE SCREEN */}
       <div className="block xl:hidden top-screen text-white pt-24 mb-3 md:pt-36 text-center lg:pt-52">
-        <h1
-          dangerouslySetInnerHTML={{
-            __html: CONTENT.HOME_PAGE.blog.title,
-          }}
-          className="text-2xl font-bold md:text-6xl lg:text-7xl"
-        ></h1>
-        <p
-          className="text-slate-400 text-md font-bold md:my-5 md:text-xl lg:text-2xl"
-          dangerouslySetInnerHTML={{
-            __html: CONTENT.HOME_PAGE.blog.text,
-          }}
-        ></p>
+        <h1 className="text-2xl font-bold md:text-6xl lg:text-7xl">
+          {CONTENT.HOME_PAGE.blog.title}
+        </h1>
+        <p className="text-slate-400 text-md font-bold md:my-5 md:text-xl lg:text-2xl">
+          {CONTENT.HOME_PAGE.blog.text}
+        </p>
         <div className="h-14 flex justify-center items-center md:h-20">
           <Link href="/blog" className="flex">
             <div className="text-md font-bold md:text-xl lg:text-2xl">
@@ -150,28 +114,25 @@ export const BlogSection = () => {
       </div>
       <div className="block xl:hidden bottom-screen text-white md:mx-5">
         {(["newsTitle1", "newsTitle2", "newsTitle3"] as const).map(
-          (title, index) => (
-            <div
-              key={index}
-              className="py-5 px-6 border-b md:py-12 md:px-8 lg:py-16 lg:px-12"
-            >
-              <h2
-                dangerouslySetInnerHTML={{
-                  __html: CONTENT.HOME_PAGE.blog[title],
-                }}
-                className="text-xl font-bold md:text-3xl lg:text-5xl"
-              ></h2>
-              <p
-                className="text-slate-400 text-sm font-bold mt-2 md:text-lg md:mt-3 lg:text-2xl lg:mt-5"
-                dangerouslySetInnerHTML={{
-                  __html:
-                    CONTENT.HOME_PAGE.blog[
-                      `newsBrief${index + 1}` as keyof BlogSectionProps
-                    ],
-                }}
-              ></p>
-            </div>
-          )
+          (title, index) => {
+            const briefKey = `newsBrief${
+              index + 1
+            }` as keyof typeof CONTENT.HOME_PAGE.blog;
+
+            return (
+              <div
+                key={title}
+                className="py-5 px-6 border-b md:py-12 md:px-8 lg:py-16 lg:px-12"
+              >
+                <h2 className="text-xl font-bold md:text-3xl lg:text-5xl">
+                  {CONTENT.HOME_PAGE.blog[title]}
+                </h2>
+                <p className="text-slate-400 text-sm font-bold mt-2 md:text-lg md:mt-3 lg:text-2xl lg:mt-5">
+                  {CONTENT.HOME_PAGE.blog[briefKey]}
+                </p>
+              </div>
+            );
+          }
         )}
       </div>
     </section>
